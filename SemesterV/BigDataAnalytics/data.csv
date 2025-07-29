@@ -1,0 +1,7 @@
+id,name,age,city,income
+1,John,29,New York,50000
+2,Jane,,Los Angeles,60000
+3,,34,Chicago,
+4,Mark,40,,70000
+5,John,29,New York,50000
+
