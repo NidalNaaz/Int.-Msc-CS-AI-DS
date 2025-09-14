@@ -10,3 +10,19 @@ old_word <- readline("Enter word to replace: ")
 new_word <- readline("Enter new word: ")
 replaced <- gsub(old_word, new_word, text)
 cat("Updated paragraph:", replaced, "\n")
+
+
+
+
+"
+Input:
+Enter a paragraph: This is a simple test paragraph
+Enter word to replace: simple
+Enter new word: easy
+
+Output:
+Total words: 6 
+Average word length: 4.666667 
+Longest word: paragraph 
+Updated paragraph: This is a easy test paragraph
+"
