@@ -13,7 +13,6 @@ cat("Updated paragraph:", replaced, "\n")
 
 
 
-
 "
 Input:
 Enter a paragraph: This is a simple test paragraph
