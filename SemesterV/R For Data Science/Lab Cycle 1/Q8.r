@@ -5,3 +5,12 @@ if (clean == paste(rev(strsplit(clean, "")[[1]]), collapse="")) {
 } else {
   cat("Not Palindrome\n")
 }
+
+
+"
+Input:
+Enter a string: Never odd or even
+
+Output:
+Palindrome
+"
