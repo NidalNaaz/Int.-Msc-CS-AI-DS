@@ -11,3 +11,12 @@ for (i in 2:(length(chars)+1)) {
   }
 }
 cat("Encoded:", encoded, "\n")
+
+
+"
+Input:
+Enter a string: aaabbcdddd
+
+Output:
+a3b2c1d4
+"
