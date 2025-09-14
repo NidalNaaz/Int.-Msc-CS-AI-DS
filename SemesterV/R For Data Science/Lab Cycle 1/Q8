@@ -1,0 +1,7 @@
+str <- readline("Enter a string: ")
+clean <- tolower(gsub("[^a-z]", "", str))
+if (clean == paste(rev(strsplit(clean, "")[[1]]), collapse="")) {
+  cat("Palindrome\n")
+} else {
+  cat("Not Palindrome\n")
+}
