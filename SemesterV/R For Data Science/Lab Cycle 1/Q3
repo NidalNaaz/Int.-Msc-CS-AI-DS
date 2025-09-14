@@ -1,0 +1,15 @@
+n <- as.integer(readline("Enter number of students: "))
+ages <- c()
+for (i in 1:n) {
+  name <- readline("Enter name: ")
+  age <- as.integer(readline("Enter age: "))
+  grade <- readline("Enter grade (A/B/C/D/F): ")
+  if (age > 0 && grade %in% c("A","B","C","D","F")) {
+    ages <- c(ages, age)
+  }
+}
+if (length(ages) > 0) {
+  cat("Average age:", mean(ages), "\n")
+} else {
+  cat("No valid records\n")
+}
