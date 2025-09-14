@@ -7,3 +7,12 @@ for (i in 1:n) {
   sign <- sign * -1
 }
 cat("Sum of series:", sum, "\n")
+
+
+"
+Input:
+Enter number of terms: 5
+
+Output:
+Sum of series: 0.7873016
+"
