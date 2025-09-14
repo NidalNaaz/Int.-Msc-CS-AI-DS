@@ -15,3 +15,12 @@ for (i in start:end) {
   if (isPrime(i)) cat(i, " ")
 }
 cat("\n")
+
+
+"
+Input:
+Enter a number: 17
+
+Output:
+Prime
+"
