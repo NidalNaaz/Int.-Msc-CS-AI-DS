@@ -13,3 +13,22 @@ if (length(ages) > 0) {
 } else {
   cat("No valid records\n")
 }
+
+
+"
+Input:
+Enter number of students: 3
+Enter name: Anna
+Enter age: 20
+Enter grade (A/B/C/D/F): A
+Enter name: Ben
+Enter age: -3
+Enter grade (A/B/C/D/F): B
+Enter name: Carl
+Enter age: 21
+Enter grade (A/B/C/D/F): C
+
+Output:
+Average age: 20.5
+"
+
