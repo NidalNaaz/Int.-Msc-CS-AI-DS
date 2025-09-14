@@ -21,6 +21,12 @@ cat("\n")
 Input:
 Enter a number: 17
 
+Enter start of range: 10
+Enter end of range: 20
+
+
 Output:
 Prime
+
+11 13 17 19
 "
