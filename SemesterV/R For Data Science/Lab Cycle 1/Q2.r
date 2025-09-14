@@ -13,3 +13,13 @@ encrypt <- function(char, shift) {
 
 encrypted <- paste(sapply(strsplit(sentence, "")[[1]], encrypt, shift), collapse = "")
 cat("Encrypted:", encrypted, "\n")
+
+
+"
+Input:
+Enter a sentence: Hello World
+Enter shift value: 3
+
+Output:
+Encrypted: Khoor Zruog
+"
