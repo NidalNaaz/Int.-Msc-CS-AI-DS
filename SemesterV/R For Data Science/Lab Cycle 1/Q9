@@ -1,0 +1,13 @@
+str <- readline("Enter a string: ")
+chars <- strsplit(str, "")[[1]]
+encoded <- ""
+count <- 1
+for (i in 2:(length(chars)+1)) {
+  if (i <= length(chars) && chars[i] == chars[i-1]) {
+    count <- count + 1
+  } else {
+    encoded <- paste0(encoded, chars[i-1], count)
+    count <- 1
+  }
+}
+cat("Encoded:", encoded, "\n")
