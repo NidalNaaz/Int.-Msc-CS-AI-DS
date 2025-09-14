@@ -1,0 +1,12 @@
+text <- readline("Enter a paragraph: ")
+words <- unlist(strsplit(text, "\\s+"))
+word_count <- length(words)
+avg_length <- mean(nchar(words))
+longest <- words[which.max(nchar(words))]
+cat("Total words:", word_count, "\n")
+cat("Average word length:", avg_length, "\n")
+cat("Longest word:", longest, "\n")
+old_word <- readline("Enter word to replace: ")
+new_word <- readline("Enter new word: ")
+replaced <- gsub(old_word, new_word, text)
+cat("Updated paragraph:", replaced, "\n")
