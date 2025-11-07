@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Petroleum Sector Data Analysis — Visualization Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f8fafc; --card:#ffffff; --muted:#475569; --accent:#2563eb; --accent2:#1f77b4;
+      --maxw:1100px;
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f172a}
+    .wrap{max-width:var(--maxw);margin:30px auto;padding:18px}
+    .slides{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,.08)}
+    .slide{min-height:620px;padding:48px;display:none;background:linear-gradient(180deg,#fff 0%, #f9fafb 100%)}
+    .active{display:block}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .title{font-size:20px;font-weight:700;color:var(--accent)}
+    .sub{font-size:13px;color:var(--muted)}
+    .btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    .btn.secondary{background:#eef2ff;color:var(--accent);border:1px solid rgba(99,102,241,.12)}
+    h1{font-size:28px;margin-bottom:12px}
+    h2{font-size:22px;margin-bottom:10px}
+    p{color:var(--muted);line-height:1.6;margin-bottom:12px}
+    ul{color:var(--muted);margin:12px 0}
+    .chart{width:100%;height:auto;background:#f1f5f9;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:15px;flex-direction:column;padding:12px}
+    .chart img{max-width:100%;border-radius:8px;margin:10px 0}
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .pager{font-weight:600;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="title">Petroleum Sector Data Analysis</div>
+        <div class="sub">Visualization & Trend Study (India, 2022–2024)</div>
+      </div>
+      <div>
+        <button id="prev" class="btn secondary">Previous</button>
+        <button id="next" class="btn">Next</button>
+      </div>
+    </header>
+
+    <main class="slides">
+      <section class="slide active">
+        <h1>Overview</h1>
+        <p>This presentation summarizes the results of a comprehensive analysis of India’s petroleum sector using five cleaned datasets. The study covers crude oil production, refinery output, product output, domestic consumption, and international trade.</p>
+        <ul>
+          <li>Data period: 2022–2024</li>
+          <li>Goal: Understand trends, relationships, and prepare data for forecasting</li>
+        </ul>
+        <footer><div class="pager">Slide 1 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Data Preparation</h2>
+        <p>All datasets were cleaned in R. Column names were standardized (camelCase), and missing values replaced using interpolation or average substitution. A uniform <strong>date</strong> column was created for time-series plotting.</p>
+        <p>The five datasets include:</p>
+        <ul>
+          <li>Crude Oil Production</li>
+          <li>Refinery Output</li>
+          <li>Product Output</li>
+          <li>Product Consumption</li>
+          <li>Product Trade</li>
+        </ul>
+        <footer><div class="pager">Slide 2 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Crude Oil Production — Trend</h2>
+        <p>India’s crude production remains largely stable between 8–9 million tonnes per month, showing minimal growth. A brief dip around early 2023 may reflect maintenance shutdowns or reduced field output.</p>
+        <div class="chart">
+          <img src="Crude Oil and Condensate Production (neater).png" alt="Crude Production Line Chart">
+        </div>
+        <footer><div class="pager">Slide 3 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Crude Production by Company</h2>
+        <p>ONGC and OIL dominate production, accounting for most of India’s domestic output. The contribution of smaller players remains relatively minor.</p>
+        <div class="chart">
+          <img src="oilProductionBYCompany.png" alt="Company-wise Stacked Area Chart">
+        </div>
+        <footer><div class="pager">Slide 4 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Refinery Production</h2>
+        <p>Refinery output shows an upward trend, confirming India’s position as a global refining hub. Growth is stable, reflecting both domestic and export-oriented refining capacity.</p>
+        <div class="chart">
+          <img src="refineryOutput(bargraph).png" alt="Refinery Production Line Chart">
+        </div>
+        <footer><div class="pager">Slide 5 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Refinery Output — Company Comparison</h2>
+        <p>Company-level analysis shows consistent operation among top refineries (IOCL, ONGC, RIL). IOCL remains the largest refiner, maintaining dominance across months.</p>
+        <div class="chart">
+          <img src="refinieryProduction(heatmap).png" alt="Refinery Company Comparison Chart">
+        </div>
+        <footer><div class="pager">Slide 6 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Product Output — Major Fuels</h2>
+        <p>Among refined products, Diesel (HSD) and Petrol (MS) show the highest production. LPG, Naphtha, and ATF maintain smaller but stable outputs, following refinery throughput patterns.</p>
+        <div class="chart">
+          <img src="productOutput.png" alt="Product Output Multi-Line Chart">
+        </div>
+        <footer><div class="pager">Slide 7 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Product Consumption — Domestic Trends</h2>
+        <p>Diesel and Petrol lead domestic consumption, representing transport and industrial demand. LPG shows slight seasonality, with peaks during colder months.</p>
+        <div class="chart">
+          <img src="productConsumption.png" alt="Product Consumption Multi-Line Chart">
+        </div>
+        <footer><div class="pager">Slide 8 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Output vs Consumption</h2>
+        <p>Consumption trends largely mirror production, implying efficient refinery-to-market flow. Minor mismatches indicate inventory adjustments or export allocations.</p>
+        <div class="chart">
+          <img src="export import 2.png" alt="Output vs Consumption Charts">
+        </div>
+        <footer><div class="pager">Slide 9 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Trade Overview</h2>
+        <p>India imports most of its crude oil but exports refined products. This trade pattern adds significant value through domestic refining and supports foreign exchange earnings.</p>
+        <div class="chart">
+          <img src="tradeData.png" alt="Trade Grouped Bar Chart">
+        </div>
+        <footer><div class="pager">Slide 10 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Import vs Export Composition</h2>
+        <p>Crude oil and LPG dominate imports, while Diesel and Petrol dominate exports. This highlights India’s dependence on crude imports and its refining advantage for export markets.</p>
+        <div class="chart">
+          <img src="tradeData.png" alt="Trade Composition Chart">
+        </div>
+        <footer><div class="pager">Slide 11 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Trade Balance Trend</h2>
+        <p>Total import values surpass export values due to high global crude prices, though exports partially offset the import bill. Value per tonne fluctuates with global oil prices.</p>
+        <div class="chart">
+          <img src="tradeData.png" alt="Trade Balance Trend Chart">
+        </div>
+        <footer><div class="pager">Slide 12 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Key Findings</h2>
+        <ul>
+          <li>Domestic crude output stagnant → high import dependency.</li>
+          <li>Refinery output rising → India’s strong refining capability.</li>
+          <li>Diesel & Petrol dominate both production and consumption.</li>
+          <li>Trade shows value addition through refined exports.</li>
+        </ul>
+        <footer><div class="pager">Slide 13 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Next Steps — Forecasting</h2>
+        <p>The cleaned datasets enable time-series forecasting for future months:</p>
+        <ul>
+          <li>Crude production — ARIMA</li>
+          <li>Consumption — ARIMA or Prophet</li>
+          <li>Trade values — Regression / ETS</li>
+        </ul>
+        <footer><div class="pager">Slide 14 of 15</div></footer>
+      </section>
+
+      <section class="slide">
+        <h2>Conclusion</h2>
+        <p>This analysis establishes a solid base for forecasting India’s petroleum trends. Visualizations highlight stable crude output, growing refinery capacity, and a strong export footprint for refined products. Part 2 will focus on forecasting and predictive modeling.</p>
+        
+        <footer><div class="pager">Slide 15 of 15</div></footer>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    let idx=0;
+    const prev=document.getElementById('prev');
+    const next=document.getElementById('next');
+    function show(i){slides.forEach(s=>s.classList.remove('active'));slides[i].classList.add('active');document.querySelector('.pager').textContent=`Slide ${i+1} of ${slides.length}`;}
+    prev.onclick=()=>{if(idx>0){idx--;show(idx);}};
+    next.onclick=()=>{if(idx<slides.length-1){idx++;show(idx);}};
+    document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next.click();if(e.key==='ArrowLeft')prev.click();});
+    show(0);
+  </script>
+</body>
+</html>
