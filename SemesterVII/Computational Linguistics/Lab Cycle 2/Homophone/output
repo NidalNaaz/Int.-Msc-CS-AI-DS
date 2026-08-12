@@ -1,0 +1,42 @@
+============================================================
+BINARY LOGISTIC REGRESSION
+HOMOPHONE ERROR CORRECTOR
+============================================================
+
+Corpus loaded successfully.
+Training examples: 182
+Manual Logistic Regression trained.
+
+Learned weights:
+Feature 1: 2.398099
+Feature 2: 1.002394
+Feature 3: 0.046986
+Feature 4: 3.604113
+Feature 5: 0.148981
+Bias: -1.337178
+
+Enter text containing possible homophone errors:
+we will write the right answer
+
+============================================================
+HOMOPHONE CORRECTION RESULTS
+============================================================
+
+Input word: write
+Candidate probabilities:
+  write     P(y=1) = 0.9806
+  right     P(y=1) = 0.0273
+  rite      P(y=1) = 0.0023
+Selected word: write
+
+Input word: right
+Candidate probabilities:
+  right     P(y=1) = 0.9999
+  write     P(y=1) = 0.0003
+  rite      P(y=1) = 0.0002
+Selected word: right
+
+============================================================
+CORRECTED TEXT
+============================================================
+we will write the right answer
