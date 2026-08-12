@@ -1,0 +1,12 @@
+MINIMUM EDIT DISTANCE
+------------------------------
+Enter first string: mangoes
+Enter second string: flamingoes
+
+Minimum Edit Distance: 4
+
+Edit Operations:
+1. Insert 'f' at position 1
+2. Insert 'l' at position 1
+3. Insert 'a' at position 1
+4. Substitute 'a' with 'i' at position 2
