@@ -1,0 +1,14 @@
+#output
+
+Running Batch Gradient Descent...
+Running Stochastic Gradient Descent...
+Running Mini-Batch Gradient Descent...
+
+======================================================================
+FAIR COMPARISON - SAME NUMBER OF PARAMETER UPDATES
+======================================================================
+Method                   Time (s)       Final Loss     Updates
+----------------------------------------------------------------------
+Batch GD                 41.7687        0.249901       20000
+Stochastic GD            0.2612         0.317999       20000
+Mini-Batch GD (64)       0.5339         0.250329       20000
