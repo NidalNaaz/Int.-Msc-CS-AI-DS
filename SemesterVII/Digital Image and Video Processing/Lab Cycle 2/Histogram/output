@@ -1,9 +1,16 @@
 #output
 
-Image shape: (335, 683)
+Image loaded successfully.
+Image size: (335, 683)
 
-Processing completed.
-Outputs:
-1. dft_spectrum.png
-2. kl_transform.png
-3. kl_reconstructed.png
+========== ENTROPY COMPARISON ==========
+Original Image   : 6.6743 bits
+Equalized Image  : 6.4682 bits
+Reference Image  : 6.0520 bits
+Matched Image    : 6.1249 bits
+
+Output files saved:
+original.png
+equalized.png
+reference.png
+matched.png
