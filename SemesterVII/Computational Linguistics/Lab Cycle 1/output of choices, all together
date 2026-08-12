@@ -1,0 +1,310 @@
+#output
+
+
+============================================================
+NLP LAB PROGRAM
+============================================================
+1. Regular Expressions
+2. ELIZA-like Program
+3. Rule-based Tokenizer
+4. Finite State Automaton
+5. Finite State Transducer
+6. Byte Pair Encoding
+0. Exit
+
+Enter choice: 1
+Enter input filename (default: input.txt): input.txt
+
+============================================================
+1. REGULAR EXPRESSION TASKS
+============================================================
+
+1(a) Consecutive repeated words:
+   Humbert Humbert
+   The The
+
+1(b) Lines starting with integer and ending with word:
+   12 apples were placed on the table
+   25 boys went to school
+
+1(c) Lines containing both 'grotto' and 'raven':
+   Humbert Humbert was standing near the grotto with the raven.
+
+1(d) First word of each sentence:
+   Humbert
+   The
+   A
+
+============================================================
+NLP LAB PROGRAM
+============================================================
+1. Regular Expressions
+2. ELIZA-like Program
+3. Rule-based Tokenizer
+4. Finite State Automaton
+5. Finite State Transducer
+6. Byte Pair Encoding
+0. Exit
+
+Enter choice: 2
+
+============================================================
+2. ELIZA-LIKE PROGRAM
+============================================================
+ELIZA: Hello! I am a simple study assistant.
+ELIZA: Tell me about your studies.
+ELIZA: Type 'BYE BYE' to exit.
+
+YOU: i dont like studying about computers
+ELIZA: Why do you say that?
+YOU: its annoying and too technical
+ELIZA: Tell me more about that.
+YOU: it gets on my nerves
+ELIZA: How does that make you feel?
+YOU: angry
+ELIZA: Why do you think that?
+YOU: its annoying
+ELIZA: Can you explain that further?
+YOU: thats about it 
+ELIZA: That sounds interesting.
+YOU: yes
+ELIZA: What do you think about it?
+YOU: ok get out
+ELIZA: Why do you say that?
+YOU: byebye
+ELIZA: Tell me more about that.
+YOU: bye bye
+ELIZA: Goodbye!
+
+============================================================
+3. ENGLISH TOKENIZER
+============================================================
+
+Enter text:
+hey man wassup how you doing? IM ABOUT TO LEAVE this @#$%^
+
+Tokens:
+ 1. hey
+ 2. man
+ 3. wassup
+ 4. how
+ 5. you
+ 6. doing
+ 7. ?
+ 8. IM
+ 9. ABOUT
+10. TO
+11. LEAVE
+12. this
+13. @
+14. #
+15. $
+16. %
+17. ^
+
+============================================================
+4. FINITE STATE AUTOMATON
+============================================================
+boys       -> ACCEPT
+toys       -> ACCEPT
+ponies     -> REJECT
+skies      -> REJECT
+puppies    -> REJECT
+boies      -> REJECT
+toies      -> REJECT
+ponys      -> REJECT
+dog        -> REJECT
+cats       -> REJECT
+
+Enter your own words (type STOP to finish):
+> mangos
+REJECT
+> mangoes
+REJECT
+> watermelon
+REJECT
+> crys
+REJECT
+> cryies
+REJECT
+> cries
+REJECT
+> salarys
+REJECT
+> salaries
+REJECT
+> salaryies
+REJECT
+> babys
+REJECT
+> babies
+REJECT
+> babyies
+REJECT
+> joys
+ACCEPT
+> STOP
+
+============================================================
+5. FINITE STATE TRANSDUCER
+============================================================
+INPUT           OUTPUT
+------------------------------
+fox^s#          foxes
+boy^s#          boys
+bus^s#          buses
+quiz^s#         quizes
+cat^s#          cats
+box^s#          boxes
+
+Enter lexical forms manually.
+Example: fox^s#
+Type STOP to finish.
+> mangos
+Invalid lexical form.
+> magoe^s#
+Output: magoes
+> babie^s#
+Output: babies
+
+
+============================================================
+6. BYTE PAIR ENCODING
+============================================================
+
+Representative corpus:
+low lower lowest
+    low lower lower
+    new newer newest
+
+Initial vocabulary:
+  l o w </w>                     2
+  l o w e r </w>                 3
+  l o w e s t </w>               1
+  n e w </w>                     1
+  n e w e r </w>                 1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 1
+--------------------------------------------------
+Most frequent pair: ('l', 'o')
+Frequency: 6
+
+Vocabulary after merge:
+  lo w </w>                      2
+  lo w e r </w>                  3
+  lo w e s t </w>                1
+  n e w </w>                     1
+  n e w e r </w>                 1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 2
+--------------------------------------------------
+Most frequent pair: ('lo', 'w')
+Frequency: 6
+
+Vocabulary after merge:
+  low </w>                       2
+  low e r </w>                   3
+  low e s t </w>                 1
+  n e w </w>                     1
+  n e w e r </w>                 1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 3
+--------------------------------------------------
+Most frequent pair: ('low', 'e')
+Frequency: 4
+
+Vocabulary after merge:
+  low </w>                       2
+  lowe r </w>                    3
+  lowe s t </w>                  1
+  n e w </w>                     1
+  n e w e r </w>                 1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 4
+--------------------------------------------------
+Most frequent pair: ('r', '</w>')
+Frequency: 4
+
+Vocabulary after merge:
+  low </w>                       2
+  lowe r</w>                     3
+  lowe s t </w>                  1
+  n e w </w>                     1
+  n e w e r</w>                  1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 5
+--------------------------------------------------
+Most frequent pair: ('lowe', 'r</w>')
+Frequency: 3
+
+Vocabulary after merge:
+  low </w>                       2
+  lower</w>                      3
+  lowe s t </w>                  1
+  n e w </w>                     1
+  n e w e r</w>                  1
+  n e w e s t </w>               1
+
+--------------------------------------------------
+Step 6
+--------------------------------------------------
+Most frequent pair: ('n', 'e')
+Frequency: 3
+
+Vocabulary after merge:
+  low </w>                       2
+  lower</w>                      3
+  lowe s t </w>                  1
+  ne w </w>                      1
+  ne w e r</w>                   1
+  ne w e s t </w>                1
+
+--------------------------------------------------
+Step 7
+--------------------------------------------------
+Most frequent pair: ('ne', 'w')
+Frequency: 3
+
+Vocabulary after merge:
+  low </w>                       2
+  lower</w>                      3
+  lowe s t </w>                  1
+  new </w>                       1
+  new e r</w>                    1
+  new e s t </w>                 1
+
+--------------------------------------------------
+Step 8
+--------------------------------------------------
+Most frequent pair: ('low', '</w>')
+Frequency: 2
+
+Vocabulary after merge:
+  low</w>                        2
+  lower</w>                      3
+  lowe s t </w>                  1
+  new </w>                       1
+  new e r</w>                    1
+  new e s t </w>                 1
+
+Final BPE vocabulary:
+  low</w>                        2
+  lower</w>                      3
+  lowe s t </w>                  1
+  new </w>                       1
+  new e r</w>                    1
+  new e s t </w>                 1
+
+BPE merge process completed.
+
+#Done
