@@ -337,20 +337,8 @@ def main():
     # Demonstration corpus
     # -----------------------------------------------------
 
-    corpus = """
-    the cat sat on the mat
-    the cat ate the food
-    the dog sat on the mat
-    the dog ate the food
-    the boy sat on the chair
-    the boy ate the food
-    the girl sat on the chair
-    the girl ate the food
-    the cat chased the dog
-    the dog chased the cat
-    the boy played with the dog
-    the girl played with the cat
-    """
+with open("corpus.txt", "r", encoding="utf-8") as file:
+    corpus = file.read()
 
     vocabulary, unigram_counts, total_words = \
         build_model(corpus)
