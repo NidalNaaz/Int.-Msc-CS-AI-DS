@@ -68,3 +68,21 @@ Selected word: right
 CORRECTED TEXT
 ============================================================
 we will right the right answer
+
+Enter text containing possible homophone errors:
+i need a peace of cake
+
+============================================================
+HOMOPHONE CORRECTION RESULTS
+============================================================
+
+Input word: peace
+Candidate probabilities:
+  piece     P(y=1) = 0.9464
+  peace     P(y=1) = 0.6814
+Selected word: piece
+
+============================================================
+CORRECTED TEXT
+============================================================
+i need a piece of cake
