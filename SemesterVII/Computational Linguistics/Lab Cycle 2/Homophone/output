@@ -40,3 +40,31 @@ Selected word: right
 CORRECTED TEXT
 ============================================================
 we will write the right answer
+
+
+
+Enter text containing possible homophone errors:
+we will right the write answer
+
+============================================================
+HOMOPHONE CORRECTION RESULTS
+============================================================
+
+Input word: right
+Candidate probabilities:
+  right     P(y=1) = 0.9806
+  write     P(y=1) = 0.0273
+  rite      P(y=1) = 0.0023
+Selected word: right
+
+Input word: write
+Candidate probabilities:
+  right     P(y=1) = 0.8302
+  write     P(y=1) = 0.3576
+  rite      P(y=1) = 0.0002
+Selected word: right
+
+============================================================
+CORRECTED TEXT
+============================================================
+we will right the right answer
