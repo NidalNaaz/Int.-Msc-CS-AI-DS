@@ -1,9 +1,5 @@
-============================================================
-NOISY CHANNEL SPELL CHECKER
-============================================================
-
-Vocabulary size: 14
-Total corpus words: 66
+Vocabulary size: 320
+Total corpus words: 1815
 
 Enter a sentence containing possible spelling errors:
 im liv in a mension
@@ -13,25 +9,34 @@ NOISY CHANNEL SPELL CHECK RESULTS
 ============================================================
 
 Misspelled word: im
-No edit-distance-1 candidates found.
-
-Misspelled word: liv
-No edit-distance-1 candidates found.
-
-Misspelled word: in
 
 Candidates:
-  on             Score = 0.0062500000
+  is             Score = 0.0053395785
+  i              Score = 0.0025761124
+  in             Score = 0.0024355972
+  am             Score = 0.0009367681
+  it             Score = 0.0001405152
 
-Best candidate: on
+Best candidate: is
 
-Misspelled word: a
-No edit-distance-1 candidates found.
+Misspelled word: liv
+
+Candidates:
+  live           Score = 0.0007494145
+
+Best candidate: live
 
 Misspelled word: mension
-No edit-distance-1 candidates found.
+
+Candidates:
+  mansion        Score = 0.0007962529
+
+Best candidate: mansion
 
 ============================================================
 CORRECTED SENTENCE
 ============================================================
-im liv on a mension
+is live in a mansion
+============================================================
+NOISY CHANNEL SPELL CHECKER
+============================================================
