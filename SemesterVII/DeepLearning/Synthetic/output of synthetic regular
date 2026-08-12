@@ -1,0 +1,14 @@
+#output
+
+Running Batch Gradient Descent...
+Running Stochastic Gradient Descent...
+Running Mini-Batch Gradient Descent...
+
+=================================================================
+RESULTS
+=================================================================
+Method                   Time (s)       Final Loss     Updates
+-----------------------------------------------------------------
+Batch GD                 0.0785         22.149028      20
+Stochastic GD            23.4546        0.310852       2000000
+Mini-Batch GD (64)       0.7412         0.251022       31260
