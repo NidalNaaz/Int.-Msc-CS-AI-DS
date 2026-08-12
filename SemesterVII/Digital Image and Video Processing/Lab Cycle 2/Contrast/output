@@ -1,0 +1,16 @@
+#output 
+
+Image loaded successfully.
+Image size: (335, 683)
+
+========== CONTRAST ENHANCEMENT RESULTS ==========
+
+Entropy:
+Original           : 6.6743 bits
+Contrast Stretching: 6.6743 bits
+CLAHE              : 7.6740 bits
+
+Intensity Standard Deviation:
+Original           : 52.0976
+Contrast Stretching: 57.2163
+CLAHE              : 60.5220
