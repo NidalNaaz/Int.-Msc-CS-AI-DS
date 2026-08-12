@@ -1,0 +1,155 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+# ---------------------------------------------------------
+# 1. LOAD IMAGE
+# ---------------------------------------------------------
+
+image = cv2.imread("image.jpg", cv2.IMREAD_GRAYSCALE)
+
+if image is None:
+    print("Error: Could not load image.jpg")
+    exit()
+
+print("Image shape:", image.shape)
+
+
+# ---------------------------------------------------------
+# 2. DISCRETE FOURIER TRANSFORM (DFT)
+# ---------------------------------------------------------
+
+# 2D Fourier Transform
+dft = np.fft.fft2(image)
+
+# Shift low frequencies to the center
+dft_shifted = np.fft.fftshift(dft)
+
+# Magnitude spectrum
+magnitude = np.log(1 + np.abs(dft_shifted))
+
+
+# ---------------------------------------------------------
+# 3. Z-TRANSFORM
+# ---------------------------------------------------------
+
+# Take the middle row of the image as a 1D signal
+signal = image[image.shape[0] // 2, :].astype(float)
+
+# Compute the Z-transform numerically at points on the unit circle
+N = len(signal)
+omega = np.linspace(0, 2 * np.pi, N)
+
+z = np.exp(1j * omega)
+
+z_transform = np.zeros(N, dtype=complex)
+
+for k in range(N):
+    z_transform[k] = np.sum(
+        signal * (z[k] ** (-np.arange(N)))
+    )
+
+z_magnitude = np.abs(z_transform)
+
+
+# ---------------------------------------------------------
+# 4. KARHUNEN-LOEVE (K-L) TRANSFORM
+# ---------------------------------------------------------
+
+# Convert image into floating point
+img_float = image.astype(np.float64)
+
+# Center each row
+mean = np.mean(img_float, axis=1, keepdims=True)
+centered = img_float - mean
+
+# Covariance matrix
+covariance = np.cov(centered)
+
+# Eigenvalues and eigenvectors
+eigenvalues, eigenvectors = np.linalg.eigh(covariance)
+
+# Sort eigenvectors by decreasing eigenvalue
+indices = np.argsort(eigenvalues)[::-1]
+
+eigenvectors = eigenvectors[:, indices]
+eigenvalues = eigenvalues[indices]
+
+# K-L transform
+kl_transform = np.dot(eigenvectors.T, centered)
+
+# Keep first 50 components for reconstruction
+components = min(50, kl_transform.shape[0])
+
+reconstructed = np.dot(
+    eigenvectors[:, :components],
+    kl_transform[:components]
+) + mean
+
+# Normalize reconstructed image
+reconstructed = np.clip(reconstructed, 0, 255).astype(np.uint8)
+
+
+# ---------------------------------------------------------
+# 5. DISPLAY RESULTS
+# ---------------------------------------------------------
+
+plt.figure(figsize=(14, 10))
+
+plt.subplot(2, 3, 1)
+plt.imshow(image, cmap="gray")
+plt.title("Original Grayscale Image")
+plt.axis("off")
+
+plt.subplot(2, 3, 2)
+plt.imshow(magnitude, cmap="gray")
+plt.title("DFT Magnitude Spectrum")
+plt.axis("off")
+
+plt.subplot(2, 3, 3)
+plt.plot(signal)
+plt.title("Signal Used for Z-Transform")
+plt.xlabel("Sample")
+plt.ylabel("Intensity")
+
+plt.subplot(2, 3, 4)
+plt.plot(omega, z_magnitude)
+plt.title("Z-Transform Magnitude")
+plt.xlabel("Frequency")
+plt.ylabel("|Z|")
+
+plt.subplot(2, 3, 5)
+plt.imshow(kl_transform, cmap="gray", aspect="auto")
+plt.title("K-L Transform")
+plt.axis("off")
+
+plt.subplot(2, 3, 6)
+plt.imshow(reconstructed, cmap="gray")
+plt.title(f"K-L Reconstruction ({components} Components)")
+plt.axis("off")
+
+plt.tight_layout()
+plt.show()
+
+
+# ---------------------------------------------------------
+# 6. SAVE OUTPUTS
+# ---------------------------------------------------------
+
+cv2.imwrite("dft_spectrum.png",
+            cv2.normalize(magnitude, None, 0, 255,
+                          cv2.NORM_MINMAX).astype(np.uint8))
+
+cv2.imwrite("kl_transform.png",
+            cv2.normalize(kl_transform, None, 0, 255,
+                          cv2.NORM_MINMAX).astype(np.uint8))
+
+cv2.imwrite("kl_reconstructed.png", reconstructed)
+
+print("\nProcessing completed.")
+print("Outputs:")
+print("1. dft_spectrum.png")
+print("2. kl_transform.png")
+print("3. kl_reconstructed.png")
