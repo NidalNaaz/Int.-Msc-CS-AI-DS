@@ -1,0 +1,79 @@
+============================================================
+STATISTICAL SPELL CHECKER
+BIGRAM LANGUAGE MODEL
+============================================================
+
+Corpus loaded successfully.
+Vocabulary size: 14
+
+VOCABULARY
+----------------------------------------
+Number of unique words: 14
+
+BIGRAM FREQUENCY TABLE
+----------------------------------------
+(the, cat) : 5
+(cat, sat) : 1
+(sat, on) : 4
+(on, the) : 4
+(the, mat) : 2
+(mat, the) : 2
+(cat, ate) : 1
+(ate, the) : 4
+(the, food) : 4
+(food, the) : 4
+(the, dog) : 5
+(dog, sat) : 1
+(dog, ate) : 1
+(the, boy) : 3
+(boy, sat) : 1
+(the, chair) : 2
+(chair, the) : 2
+(boy, ate) : 1
+(the, girl) : 3
+(girl, sat) : 1
+(girl, ate) : 1
+(cat, chased) : 1
+(chased, the) : 2
+(dog, the) : 2
+(dog, chased) : 1
+(cat, the) : 1
+(boy, played) : 1
+(played, with) : 2
+(with, the) : 2
+(girl, played) : 1
+
+============================================================
+
+Enter a sentence containing possible spelling errors:
+im liv in a mension
+
+============================================================
+SPELL CHECK RESULTS
+============================================================
+
+Misspelled word: im
+Candidates: None
+No correction found.
+
+Misspelled word: liv
+Candidates: None
+No correction found.
+
+Misspelled word: in
+Candidates:
+  on              Score = 0.00000000
+Best candidate: on
+
+Misspelled word: a
+Candidates: None
+No correction found.
+
+Misspelled word: mension
+Candidates: None
+No correction found.
+
+============================================================
+CORRECTED SENTENCE
+============================================================
+im liv on a mension
