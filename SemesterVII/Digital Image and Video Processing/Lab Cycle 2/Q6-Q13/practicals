@@ -1,0 +1,821 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# =========================================================
+# DIGITAL IMAGE PROCESSING PRACTICALS 6, 7, 8, 9, 11, 12, 13
+# Input: image.jpg
+# =========================================================
+
+IMAGE_FILE = "image.jpg"
+
+
+def load_gray():
+    img = cv2.imread(IMAGE_FILE, cv2.IMREAD_GRAYSCALE)
+    if img is None:
+        raise FileNotFoundError("image.jpg not found in the current folder.")
+    return img
+
+
+def load_color():
+    img = cv2.imread(IMAGE_FILE)
+    if img is None:
+        raise FileNotFoundError("image.jpg not found in the current folder.")
+    return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+
+def normalize_uint8(img):
+    return cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+
+
+# =========================================================
+# 6. HOMOMORPHIC FILTERING
+# =========================================================
+
+def practical_6():
+    image = load_gray().astype(np.float32)
+
+    # Log transform separates illumination and reflectance.
+    log_image = np.log1p(image)
+
+    F = np.fft.fft2(log_image)
+    F_shifted = np.fft.fftshift(F)
+
+    rows, cols = image.shape
+    cy, cx = rows // 2, cols // 2
+
+    Y, X = np.ogrid[:rows, :cols]
+    D = np.sqrt((X - cx) ** 2 + (Y - cy) ** 2)
+
+    # High-pass emphasis filter:
+    # low frequencies -> gamma_L
+    # high frequencies -> gamma_H
+    gamma_L = 0.5
+    gamma_H = 2.0
+    D0 = 30.0
+    c = 1.0
+
+    H = (gamma_H - gamma_L) * (
+        1 - np.exp(-c * (D ** 2) / (D0 ** 2))
+    ) + gamma_L
+
+    filtered = H * F_shifted
+
+    filtered_log = np.real(
+        np.fft.ifft2(np.fft.ifftshift(filtered))
+    )
+
+    # Undo logarithm.
+    result = np.expm1(filtered_log)
+    result = normalize_uint8(result)
+
+    plt.figure(figsize=(12, 8))
+
+    plt.subplot(2, 3, 1)
+    plt.imshow(image, cmap="gray")
+    plt.title("Original")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 2)
+    plt.imshow(np.log(1 + np.abs(F_shifted)), cmap="gray")
+    plt.title("Log Frequency Spectrum")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 3)
+    plt.imshow(H, cmap="gray")
+    plt.title("Homomorphic Filter")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 4)
+    plt.imshow(result, cmap="gray")
+    plt.title("Homomorphic Result")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 5)
+    plt.hist(image.ravel(), bins=256, range=(0, 256))
+    plt.title("Original Histogram")
+
+    plt.subplot(2, 3, 6)
+    plt.hist(result.ravel(), bins=256, range=(0, 256))
+    plt.title("Filtered Histogram")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite("homomorphic_result.png", result)
+    print("Saved: homomorphic_result.png")
+
+
+# =========================================================
+# 7. RGB, HSI, YCbCr COLOR SPACE CONVERSION
+# =========================================================
+
+def rgb_to_hsi(rgb):
+    rgb = rgb.astype(np.float32) / 255.0
+
+    R = rgb[:, :, 0]
+    G = rgb[:, :, 1]
+    B = rgb[:, :, 2]
+
+    I = (R + G + B) / 3.0
+
+    minimum = np.minimum(np.minimum(R, G), B)
+    S = 1 - (3 * minimum / (R + G + B + 1e-10))
+
+    numerator = 0.5 * ((R - G) + (R - B))
+    denominator = np.sqrt(
+        (R - G) ** 2 +
+        (R - B) * (G - B)
+    ) + 1e-10
+
+    theta = np.arccos(
+        np.clip(numerator / denominator, -1, 1)
+    )
+
+    H = np.where(B <= G, theta, 2 * np.pi - theta)
+    H = H / (2 * np.pi)
+
+    return H, S, I
+
+
+def practical_7():
+    rgb = load_color()
+
+    # OpenCV expects BGR for conversion.
+    bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+
+    hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)
+    ycrcb = cv2.cvtColor(bgr, cv2.COLOR_BGR2YCrCb)
+
+    H, S, I = rgb_to_hsi(rgb)
+
+    # Display HSI components.
+    h_display = (H * 255).astype(np.uint8)
+    s_display = (S * 255).astype(np.uint8)
+    i_display = (I * 255).astype(np.uint8)
+
+    plt.figure(figsize=(14, 8))
+
+    plt.subplot(2, 4, 1)
+    plt.imshow(rgb)
+    plt.title("RGB")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 2)
+    plt.imshow(h_display, cmap="gray")
+    plt.title("HSI - Hue")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 3)
+    plt.imshow(s_display, cmap="gray")
+    plt.title("HSI - Saturation")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 4)
+    plt.imshow(i_display, cmap="gray")
+    plt.title("HSI - Intensity")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 5)
+    plt.imshow(hsv[:, :, 0], cmap="gray")
+    plt.title("HSV Hue")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 6)
+    plt.imshow(hsv[:, :, 1], cmap="gray")
+    plt.title("HSV Saturation")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 7)
+    plt.imshow(ycrcb[:, :, 0], cmap="gray")
+    plt.title("YCbCr - Y")
+    plt.axis("off")
+
+    plt.subplot(2, 4, 8)
+    plt.imshow(ycrcb[:, :, 1:],)
+    plt.title("YCbCr - Cr/Cb")
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite("hsi_hue.png", h_display)
+    cv2.imwrite("hsi_saturation.png", s_display)
+    cv2.imwrite("hsi_intensity.png", i_display)
+    cv2.imwrite("y_channel.png", ycrcb[:, :, 0])
+
+    print("Saved HSI and YCbCr component images.")
+
+
+# =========================================================
+# 8. COLOR HISTOGRAM EQUALIZATION
+# =========================================================
+
+def practical_8():
+    rgb = load_color()
+    bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+
+    # Method 1: equalizing R, G and B independently.
+    channels = cv2.split(bgr)
+    equalized_channels = [
+        cv2.equalizeHist(channel) for channel in channels
+    ]
+    rgb_equalized = cv2.cvtColor(
+        cv2.merge(equalized_channels),
+        cv2.COLOR_BGR2RGB
+    )
+
+    # Method 2: equalize only luminance using YCrCb.
+    ycrcb = cv2.cvtColor(bgr, cv2.COLOR_BGR2YCrCb)
+
+    ycrcb_equalized = ycrcb.copy()
+    ycrcb_equalized[:, :, 0] = cv2.equalizeHist(
+        ycrcb[:, :, 0]
+    )
+
+    luminance_equalized = cv2.cvtColor(
+        ycrcb_equalized,
+        cv2.COLOR_YCrCb2RGB
+    )
+
+    plt.figure(figsize=(14, 9))
+
+    plt.subplot(2, 3, 1)
+    plt.imshow(rgb)
+    plt.title("Original")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 2)
+    plt.imshow(rgb_equalized)
+    plt.title("RGB Channel Equalization")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 3)
+    plt.imshow(luminance_equalized)
+    plt.title("Y Channel Equalization")
+    plt.axis("off")
+
+    colors = ["r", "g", "b"]
+
+    plt.subplot(2, 3, 4)
+    for i, color in enumerate(colors):
+        hist = cv2.calcHist(
+            [cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)],
+            [i], None, [256], [0, 256]
+        )
+        plt.plot(hist, label=color)
+    plt.title("Original Color Histograms")
+    plt.legend()
+
+    plt.subplot(2, 3, 5)
+    for i, color in enumerate(colors):
+        hist = cv2.calcHist(
+            [cv2.cvtColor(rgb_equalized, cv2.COLOR_RGB2BGR)],
+            [i], None, [256], [0, 256]
+        )
+        plt.plot(hist, label=color)
+    plt.title("RGB Equalized Histograms")
+    plt.legend()
+
+    plt.subplot(2, 3, 6)
+    y_original = ycrcb[:, :, 0]
+    y_equalized = ycrcb_equalized[:, :, 0]
+
+    plt.plot(
+        cv2.calcHist([y_original], [0], None, [256], [0, 256]),
+        label="Original Y"
+    )
+    plt.plot(
+        cv2.calcHist([y_equalized], [0], None, [256], [0, 256]),
+        label="Equalized Y"
+    )
+    plt.title("Y Channel Histograms")
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite(
+        "color_equalized_rgb.png",
+        cv2.cvtColor(rgb_equalized, cv2.COLOR_RGB2BGR)
+    )
+    cv2.imwrite(
+        "color_equalized_y.png",
+        cv2.cvtColor(luminance_equalized, cv2.COLOR_RGB2BGR)
+    )
+
+    print("Saved:")
+    print("color_equalized_rgb.png")
+    print("color_equalized_y.png")
+    print("\nNote: Y-channel equalization usually preserves color")
+    print("better than independently equalizing RGB channels.")
+
+
+# =========================================================
+# 9. COLOR EDGE DETECTION
+# =========================================================
+
+def practical_9():
+    rgb = load_color()
+    gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+
+    # Sobel
+    sobel_x = cv2.Sobel(
+        gray, cv2.CV_64F, 1, 0, ksize=3
+    )
+    sobel_y = cv2.Sobel(
+        gray, cv2.CV_64F, 0, 1, ksize=3
+    )
+
+    sobel_magnitude = cv2.magnitude(
+        sobel_x.astype(np.float32),
+        sobel_y.astype(np.float32)
+    )
+
+    sobel_magnitude = normalize_uint8(
+        sobel_magnitude
+    )
+
+    # Canny
+    canny = cv2.Canny(
+        gray,
+        100,
+        200
+    )
+
+    # Color edge detection:
+    # Apply Canny/Sobel to each RGB channel.
+    color_edges = []
+
+    for channel in cv2.split(rgb):
+        edge = cv2.Canny(channel, 100, 200)
+        color_edges.append(edge)
+
+    color_edge_map = np.maximum.reduce(color_edges)
+
+    plt.figure(figsize=(12, 8))
+
+    plt.subplot(2, 3, 1)
+    plt.imshow(rgb)
+    plt.title("Original Color Image")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 2)
+    plt.imshow(gray, cmap="gray")
+    plt.title("Grayscale")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 3)
+    plt.imshow(sobel_magnitude, cmap="gray")
+    plt.title("Sobel Edge Magnitude")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 4)
+    plt.imshow(canny, cmap="gray")
+    plt.title("Canny on Grayscale")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 5)
+    plt.imshow(color_edges[0], cmap="gray")
+    plt.title("Red Channel Edges")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 6)
+    plt.imshow(color_edge_map, cmap="gray")
+    plt.title("Combined Color Edges")
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite("sobel_edges.png", sobel_magnitude)
+    cv2.imwrite("canny_edges.png", canny)
+    cv2.imwrite("color_edges.png", color_edge_map)
+
+    print("Saved:")
+    print("sobel_edges.png")
+    print("canny_edges.png")
+    print("color_edges.png")
+
+
+# =========================================================
+# 11. IMAGE SEGMENTATION
+# =========================================================
+
+def practical_11():
+    gray = load_gray()
+
+    # Global threshold
+    _, global_threshold = cv2.threshold(
+        gray,
+        127,
+        255,
+        cv2.THRESH_BINARY
+    )
+
+    # Otsu threshold
+    otsu_value, otsu = cv2.threshold(
+        gray,
+        0,
+        255,
+        cv2.THRESH_BINARY + cv2.THRESH_OTSU
+    )
+
+    # Adaptive threshold
+    adaptive = cv2.adaptiveThreshold(
+        gray,
+        255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY,
+        11,
+        2
+    )
+
+    # Edge-based segmentation
+    edges = cv2.Canny(gray, 100, 200)
+
+    # Region-based segmentation:
+    # Simple region growing from the image center.
+    seed_y = gray.shape[0] // 2
+    seed_x = gray.shape[1] // 2
+
+    tolerance = 20
+
+    region = np.zeros_like(gray, dtype=np.uint8)
+    visited = np.zeros_like(gray, dtype=bool)
+
+    seed_value = int(gray[seed_y, seed_x])
+
+    stack = [(seed_y, seed_x)]
+
+    while stack:
+        y, x = stack.pop()
+
+        if y < 0 or y >= gray.shape[0]:
+            continue
+        if x < 0 or x >= gray.shape[1]:
+            continue
+        if visited[y, x]:
+            continue
+
+        visited[y, x] = True
+
+        if abs(int(gray[y, x]) - seed_value) <= tolerance:
+            region[y, x] = 255
+
+            stack.append((y - 1, x))
+            stack.append((y + 1, x))
+            stack.append((y, x - 1))
+            stack.append((y, x + 1))
+
+    plt.figure(figsize=(14, 9))
+
+    plt.subplot(2, 3, 1)
+    plt.imshow(gray, cmap="gray")
+    plt.title("Original")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 2)
+    plt.imshow(global_threshold, cmap="gray")
+    plt.title("Global Threshold")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 3)
+    plt.imshow(otsu, cmap="gray")
+    plt.title(f"Otsu Threshold = {otsu_value:.1f}")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 4)
+    plt.imshow(adaptive, cmap="gray")
+    plt.title("Adaptive Threshold")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 5)
+    plt.imshow(region, cmap="gray")
+    plt.title("Region Growing")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 6)
+    plt.imshow(edges, cmap="gray")
+    plt.title("Edge-Based Segmentation")
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite("seg_global.png", global_threshold)
+    cv2.imwrite("seg_otsu.png", otsu)
+    cv2.imwrite("seg_adaptive.png", adaptive)
+    cv2.imwrite("seg_region.png", region)
+    cv2.imwrite("seg_edges.png", edges)
+
+    print("Saved segmentation results.")
+
+
+# =========================================================
+# 12. MORPHOLOGICAL PROCESSING
+# =========================================================
+
+def practical_12():
+    gray = load_gray()
+
+    # Create binary image automatically.
+    _, binary = cv2.threshold(
+        gray,
+        127,
+        255,
+        cv2.THRESH_BINARY
+    )
+
+    kernel = np.ones((5, 5), np.uint8)
+
+    erosion = cv2.erode(
+        binary,
+        kernel,
+        iterations=1
+    )
+
+    dilation = cv2.dilate(
+        binary,
+        kernel,
+        iterations=1
+    )
+
+    opening = cv2.morphologyEx(
+        binary,
+        cv2.MORPH_OPEN,
+        kernel
+    )
+
+    closing = cv2.morphologyEx(
+        binary,
+        cv2.MORPH_CLOSE,
+        kernel
+    )
+
+    plt.figure(figsize=(14, 8))
+
+    plt.subplot(2, 3, 1)
+    plt.imshow(binary, cmap="gray")
+    plt.title("Binary Image")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 2)
+    plt.imshow(erosion, cmap="gray")
+    plt.title("Erosion")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 3)
+    plt.imshow(dilation, cmap="gray")
+    plt.title("Dilation")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 4)
+    plt.imshow(opening, cmap="gray")
+    plt.title("Opening")
+    plt.axis("off")
+
+    plt.subplot(2, 3, 5)
+    plt.imshow(closing, cmap="gray")
+    plt.title("Closing")
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite("morph_binary.png", binary)
+    cv2.imwrite("morph_erosion.png", erosion)
+    cv2.imwrite("morph_dilation.png", dilation)
+    cv2.imwrite("morph_opening.png", opening)
+    cv2.imwrite("morph_closing.png", closing)
+
+    print("Saved morphological processing results.")
+
+
+# =========================================================
+# 13. IMAGE REGISTRATION
+# =========================================================
+
+def practical_13():
+    original = load_color()
+
+    rows, cols = original.shape[:2]
+
+    # Generate a second image by applying a known
+    # translation + small rotation.
+    center = (cols // 2, rows // 2)
+
+    rotation_matrix = cv2.getRotationMatrix2D(
+        center,
+        3,
+        1.0
+    )
+
+    rotation_matrix[0, 2] += 20
+    rotation_matrix[1, 2] += 15
+
+    transformed = cv2.warpAffine(
+        original,
+        rotation_matrix,
+        (cols, rows)
+    )
+
+    gray1 = cv2.cvtColor(
+        original,
+        cv2.COLOR_RGB2GRAY
+    )
+
+    gray2 = cv2.cvtColor(
+        transformed,
+        cv2.COLOR_RGB2GRAY
+    )
+
+    # ORB feature detection.
+    orb = cv2.ORB_create(
+        nfeatures=2000
+    )
+
+    keypoints1, descriptors1 = orb.detectAndCompute(
+        gray1,
+        None
+    )
+
+    keypoints2, descriptors2 = orb.detectAndCompute(
+        gray2,
+        None
+    )
+
+    if descriptors1 is None or descriptors2 is None:
+        print("Could not find enough features.")
+        return
+
+    # Match ORB descriptors.
+    matcher = cv2.BFMatcher(
+        cv2.NORM_HAMMING,
+        crossCheck=True
+    )
+
+    matches = matcher.match(
+        descriptors1,
+        descriptors2
+    )
+
+    matches = sorted(
+        matches,
+        key=lambda m: m.distance
+    )
+
+    good_matches = matches[:min(100, len(matches))]
+
+    if len(good_matches) < 4:
+        print("Not enough matches for registration.")
+        return
+
+    src_points = np.float32([
+        keypoints1[m.queryIdx].pt
+        for m in good_matches
+    ]).reshape(-1, 1, 2)
+
+    dst_points = np.float32([
+        keypoints2[m.trainIdx].pt
+        for m in good_matches
+    ]).reshape(-1, 1, 2)
+
+    # Estimate transformation from transformed image
+    # back to the original.
+    H, mask = cv2.findHomography(
+        dst_points,
+        src_points,
+        cv2.RANSAC,
+        5.0
+    )
+
+    if H is None:
+        print("Homography estimation failed.")
+        return
+
+    registered = cv2.warpPerspective(
+        transformed,
+        H,
+        (cols, rows)
+    )
+
+    # Match visualization.
+    match_image = cv2.drawMatches(
+        original,
+        keypoints1,
+        transformed,
+        keypoints2,
+        good_matches[:30],
+        None,
+        flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS
+    )
+
+    plt.figure(figsize=(14, 9))
+
+    plt.subplot(2, 2, 1)
+    plt.imshow(original)
+    plt.title("Original Reference")
+    plt.axis("off")
+
+    plt.subplot(2, 2, 2)
+    plt.imshow(transformed)
+    plt.title("Transformed Image")
+    plt.axis("off")
+
+    plt.subplot(2, 2, 3)
+    plt.imshow(
+        cv2.cvtColor(
+            match_image,
+            cv2.COLOR_BGR2RGB
+        )
+    )
+    plt.title("ORB Feature Matches")
+    plt.axis("off")
+
+    plt.subplot(2, 2, 4)
+    plt.imshow(registered)
+    plt.title("Registered Image")
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    cv2.imwrite(
+        "registration_transformed.png",
+        cv2.cvtColor(transformed, cv2.COLOR_RGB2BGR)
+    )
+
+    cv2.imwrite(
+        "registration_matches.png",
+        match_image
+    )
+
+    cv2.imwrite(
+        "registration_result.png",
+        cv2.cvtColor(registered, cv2.COLOR_RGB2BGR)
+    )
+
+    print("Saved:")
+    print("registration_transformed.png")
+    print("registration_matches.png")
+    print("registration_result.png")
+    print(f"Features in image 1: {len(keypoints1)}")
+    print(f"Features in image 2: {len(keypoints2)}")
+    print(f"Good matches used: {len(good_matches)}")
+
+
+# =========================================================
+# MENU
+# =========================================================
+
+def main():
+    print("\n==============================================")
+    print(" DIGITAL IMAGE PROCESSING PRACTICALS")
+    print("==============================================")
+    print("6  - Homomorphic Filtering")
+    print("7  - RGB, HSI, YCbCr Conversion")
+    print("8  - Color Histogram Equalization")
+    print("9  - Color Edge Detection")
+    print("11 - Image Segmentation")
+    print("12 - Morphological Processing")
+    print("13 - Image Registration")
+    print("0  - Run ALL")
+    print("==============================================")
+
+    choice = input("Enter practical number: ").strip()
+
+    try:
+        if choice == "6":
+            practical_6()
+        elif choice == "7":
+            practical_7()
+        elif choice == "8":
+            practical_8()
+        elif choice == "9":
+            practical_9()
+        elif choice == "11":
+            practical_11()
+        elif choice == "12":
+            practical_12()
+        elif choice == "13":
+            practical_13()
+        elif choice == "0":
+            practical_6()
+            practical_7()
+            practical_8()
+            practical_9()
+            practical_11()
+            practical_12()
+            practical_13()
+        else:
+            print("Invalid choice.")
+
+    except FileNotFoundError as e:
+        print("\nERROR:", e)
+    except Exception as e:
+        print("\nERROR:", type(e).__name__, "-", e)
+
+
+if __name__ == "__main__":
+    main()
