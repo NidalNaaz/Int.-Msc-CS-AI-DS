@@ -1,0 +1,77 @@
+===========================================================================
+NAIVE BAYES SENTIMENT CLASSIFIER
+UNIGRAM + BIGRAM FEATURES
+ADD-k SMOOTHING
+===========================================================================
+
+Total samples: 85
+Training samples: 68
+Testing samples: 17
+Feature vocabulary: 213
+
+===========================================================================
+ADD-k SMOOTHING COMPARISON
+===========================================================================
+k = 0.25  Accuracy = 70.59%
+k = 0.75  Accuracy = 64.71%
+k = 1.0   Accuracy = 64.71%
+
+===========================================================================
+Best k: 0.25
+Best accuracy: 70.59%
+===========================================================================
+
+Predictions:
+---------------------------------------------------------------------------
+CORRECT  Actual: negative  Predicted: negative  | I hated the experience
+CORRECT  Actual: positive  Predicted: positive  | I am satisfied with the result
+WRONG    Actual: positive  Predicted: negative  | The result made me happy
+CORRECT  Actual: negative  Predicted: negative  | I did not like the movie
+CORRECT  Actual: negative  Predicted: negative  | It was a sad moment
+CORRECT  Actual: positive  Predicted: positive  | The story was wonderful
+CORRECT  Actual: negative  Predicted: negative  | The actors were terrible
+WRONG    Actual: positive  Predicted: negative  | The movie was enjoyable
+CORRECT  Actual: negative  Predicted: negative  | I felt bad after the incident
+WRONG    Actual: positive  Predicted: negative  | The film was brilliant
+WRONG    Actual: positive  Predicted: negative  | The movie made me happy
+CORRECT  Actual: positive  Predicted: positive  | This was a pleasant experience
+CORRECT  Actual: positive  Predicted: positive  | The service was excellent
+CORRECT  Actual: positive  Predicted: positive  | It was a happy moment
+CORRECT  Actual: positive  Predicted: positive  | I really enjoyed the movie
+CORRECT  Actual: positive  Predicted: positive  | The actors were fantastic
+WRONG    Actual: negative  Predicted: positive  | I am bound to get angry
+
+===========================================================================
+INTERACTIVE SENTIMENT ANALYSIS
+===========================================================================
+
+Enter a sentence (or 'quit'):
+it was a sad day
+
+Predicted sentiment: negative
+Positive score: -53.3069944572347
+Negative score: -52.746550905053375
+
+Enter a sentence (or 'quit'):
+what a happy day to be alive
+
+Predicted sentiment: positive
+Positive score: -84.33120900260654
+Negative score: -89.18692652993735
+
+Enter a sentence (or 'quit'):
+i was not angry at him for that
+
+Predicted sentiment: negative
+Positive score: -98.24698665532686
+Negative score: -91.11321456208637
+
+Enter a sentence (or 'quit'):
+it was a really peaceful day
+
+Predicted sentiment: positive
+Positive score: -65.1537227260428
+Negative score: -67.83066319064476
+
+Enter a sentence (or 'quit'):
+quit
