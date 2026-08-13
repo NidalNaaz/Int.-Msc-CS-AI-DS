@@ -314,3 +314,900 @@ brought        Count = 1    P = 0.000690
 question       Count = 1    P = 0.000690
 door           Count = 1    P = 0.000690
 testing        Count = 1    P = 0.000690
+
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 2
+
+BIGRAM MODEL
+------------------------------------------------------------
+(<s>, the)      Count = 145  P = 0.521583
+(<s>, i)        Count = 41   P = 0.147482
+(the, student)  Count = 26   P = 0.109244
+(in, a) Count = 22   P = 0.536585
+(has, a)        Count = 16   P = 0.888889
+(i, am) Count = 15   P = 0.365854
+(live, in)      Count = 14   P = 1.000000
+(in, the)       Count = 13   P = 0.317073
+(<s>, we)       Count = 13   P = 0.046763
+(on, the)       Count = 13   P = 0.764706
+(answer, </s>)  Count = 13   P = 0.684211
+(the, teacher)  Count = 13   P = 0.054622
+(to, the)       Count = 11   P = 0.733333
+(the, house)    Count = 10   P = 0.042017
+(<s>, she)      Count = 10   P = 0.035971
+(we, are)       Count = 9    P = 0.692308
+(is, on)        Count = 9    P = 0.101124
+(went, to)      Count = 9    P = 1.000000
+(house, </s>)   Count = 8    P = 0.444444
+(the, answer)   Count = 8    P = 0.033613
+(the, students) Count = 8    P = 0.033613
+(students, are) Count = 8    P = 0.888889
+(error, </s>)   Count = 8    P = 1.000000
+(<s>, a)        Count = 8    P = 0.028777
+(the, table)    Count = 8    P = 0.033613
+(table, </s>)   Count = 8    P = 1.000000
+(<s>, he)       Count = 7    P = 0.025180
+(a, large)      Count = 7    P = 0.088608
+(book, </s>)    Count = 7    P = 0.700000
+(the, right)    Count = 7    P = 0.029412
+(<s>, they)     Count = 7    P = 0.025180
+(student, is)   Count = 7    P = 0.269231
+(near, the)     Count = 7    P = 1.000000
+(<s>, this)     Count = 7    P = 0.025180
+(this, is)      Count = 7    P = 1.000000
+(the, researcher)       Count = 7    P = 0.029412
+(peace, </s>)   Count = 7    P = 0.875000
+(lives, in)     Count = 7    P = 1.000000
+(teacher, is)   Count = 7    P = 0.500000
+(the, program)  Count = 7    P = 0.029412
+(is, in)        Count = 6    P = 0.067416
+(is, correct)   Count = 6    P = 0.067416
+(correct, </s>) Count = 6    P = 0.545455
+(house, is)     Count = 6    P = 0.333333
+(the, mansion)  Count = 6    P = 0.025210
+(a, book)       Count = 6    P = 0.075949
+(is, a) Count = 6    P = 0.067416
+(machine, learning)     Count = 6    P = 1.000000
+(<s>, they're)  Count = 6    P = 0.021583
+(i, like)       Count = 6    P = 0.146341
+(the, model)    Count = 6    P = 0.025210
+(<s>, their)    Count = 6    P = 0.021583
+(i, live)       Count = 6    P = 0.146341
+(right, </s>)   Count = 5    P = 0.416667
+(program, </s>) Count = 5    P = 0.416667
+(the, cat)      Count = 5    P = 0.021008
+(living, in)    Count = 5    P = 1.000000
+(a, piece)      Count = 5    P = 0.063291
+(piece, of)     Count = 5    P = 1.000000
+(a, project)    Count = 5    P = 0.063291
+(project, </s>) Count = 5    P = 1.000000
+(the, sentence) Count = 5    P = 0.021008
+(school, </s>)  Count = 5    P = 0.833333
+(right, answer) Count = 5    P = 0.416667
+(the, dog)      Count = 5    P = 0.021008
+(dog, is)       Count = 5    P = 0.714286
+(city, </s>)    Count = 5    P = 1.000000
+(computer, science)     Count = 5    P = 0.625000
+(mansion, </s>) Count = 5    P = 0.357143
+(a, small)      Count = 5    P = 0.063291
+(the, correct)  Count = 5    P = 0.021008
+(the, school)   Count = 5    P = 0.021008
+(garden, </s>)  Count = 5    P = 1.000000
+(reads, the)    Count = 5    P = 1.000000
+(spell, checker)        Count = 5    P = 1.000000
+(a, program)    Count = 4    P = 0.050633
+(village, </s>) Count = 4    P = 1.000000
+(the, weather)  Count = 4    P = 0.016807
+(weather, is)   Count = 4    P = 1.000000
+(today, </s>)   Count = 4    P = 1.000000
+(mansion, has)  Count = 4    P = 0.285714
+(room, </s>)    Count = 4    P = 1.000000
+(sentence, </s>)        Count = 4    P = 0.500000
+(have, a)       Count = 4    P = 0.800000
+(student, writes)       Count = 4    P = 0.153846
+(writes, the)   Count = 4    P = 0.500000
+(working, on)   Count = 4    P = 0.800000
+(the, error)    Count = 4    P = 0.016807
+(i, went)       Count = 4    P = 0.097561
+(natural, language)     Count = 4    P = 1.000000
+(language, processing)  Count = 4    P = 0.444444
+(learning, </s>)        Count = 4    P = 0.266667
+(i, write)      Count = 4    P = 0.097561
+(mansion, is)   Count = 4    P = 0.285714
+(science, </s>) Count = 4    P = 0.800000
+(beautiful, mansion)    Count = 4    P = 0.666667
+(reading, books)        Count = 4    P = 0.666667
+(books, </s>)   Count = 4    P = 0.800000
+(a, laptop)     Count = 4    P = 0.050633
+(laptop, </s>)  Count = 4    P = 1.000000
+(i, have)       Count = 4    P = 0.097561
+(a, spelling)   Count = 4    P = 0.050633
+(the, book)     Count = 4    P = 0.016807
+(word, </s>)    Count = 4    P = 0.363636
+(the, system)   Count = 4    P = 0.016807
+(there, </s>)   Count = 4    P = 0.666667
+(the, bag)      Count = 4    P = 0.016807
+(errors, </s>)  Count = 4    P = 1.000000
+(learning, english)     Count = 4    P = 0.266667
+(english, </s>) Count = 4    P = 0.400000
+(answer, is)    Count = 4    P = 0.210526
+(student, reads)        Count = 4    P = 0.153846
+(<s>, you)      Count = 3    P = 0.010791
+(writes, a)     Count = 3    P = 0.375000
+(the, phone)    Count = 3    P = 0.012605
+(phone, is)     Count = 3    P = 1.000000
+(student, has)  Count = 3    P = 0.115385
+(write, the)    Count = 3    P = 0.428571
+(on, a) Count = 3    P = 0.176471
+(is, right)     Count = 3    P = 0.033708
+(people, live)  Count = 3    P = 0.750000
+(a, house)      Count = 3    P = 0.037975
+(<s>, my)       Count = 3    P = 0.010791
+(family, lives) Count = 3    P = 0.750000
+(a, beautiful)  Count = 3    P = 0.037975
+(is, useful)    Count = 3    P = 0.033708
+(useful, </s>)  Count = 3    P = 0.750000
+(they, live)    Count = 3    P = 0.428571
+(the, professor)        Count = 3    P = 0.012605
+(processing, </s>)      Count = 3    P = 0.750000
+(language, model)       Count = 3    P = 0.333333
+(candidate, </s>)       Count = 3    P = 0.750000
+(an, answer)    Count = 3    P = 0.333333
+(the, word)     Count = 3    P = 0.012605
+(spelling, error)       Count = 3    P = 0.333333
+(book, is)      Count = 3    P = 0.300000
+(<s>, english)  Count = 3    P = 0.010791
+(english, is)   Count = 3    P = 0.300000
+(home, </s>)    Count = 3    P = 1.000000
+(word, is)      Count = 3    P = 0.272727
+(bag, </s>)     Count = 3    P = 0.750000
+(the, pen)      Count = 3    P = 0.012605
+(pen, is)       Count = 3    P = 1.000000
+(the, spell)    Count = 3    P = 0.012605
+(write, a)      Count = 3    P = 0.428571
+(the, girl)     Count = 3    P = 0.012605
+(spelling, errors)      Count = 3    P = 0.333333
+(preparing, for)        Count = 3    P = 1.000000
+(examination, </s>)     Count = 3    P = 1.000000
+(house, has)    Count = 3    P = 0.166667
+(cat, is)       Count = 2    P = 0.400000
+(the, problem)  Count = 2    P = 0.008403
+(problem, is)   Count = 2    P = 0.666667
+(are, living)   Count = 2    P = 0.090909
+(is, very)      Count = 2    P = 0.022472
+(is, old)       Count = 2    P = 0.022472
+(old, </s>)     Count = 2    P = 0.666667
+(<s>, it)       Count = 2    P = 0.007194
+(it, is)        Count = 2    P = 1.000000
+(large, room)   Count = 2    P = 0.200000
+(you, write)    Count = 2    P = 0.666667
+(she, has)      Count = 2    P = 0.200000
+(a, computer)   Count = 2    P = 0.025316
+(computer, </s>)        Count = 2    P = 0.250000
+(am, working)   Count = 2    P = 0.133333
+(she, went)     Count = 2    P = 0.200000
+(the, market)   Count = 2    P = 0.008403
+(market, </s>)  Count = 2    P = 1.000000
+(the, algorithm)        Count = 2    P = 0.008403
+(is, beautiful) Count = 2    P = 0.022472
+(beautiful, </s>)       Count = 2    P = 0.333333
+(is, near)      Count = 2    P = 0.022472
+(the, city)     Count = 2    P = 0.008403
+(is, living)    Count = 2    P = 0.022472
+(needs, peace)  Count = 2    P = 1.000000
+(is, writing)   Count = 2    P = 0.022472
+(writing, a)    Count = 2    P = 0.400000
+(the, people)   Count = 2    P = 0.008403
+(am, interested)        Count = 2    P = 0.133333
+(interested, in)        Count = 2    P = 1.000000
+(reading, a)    Count = 2    P = 0.333333
+(is, good)      Count = 2    P = 0.022472
+(my, family)    Count = 2    P = 0.666667
+(model, is)     Count = 2    P = 0.153846
+(professor, is) Count = 2    P = 0.666667
+(are, learning) Count = 2    P = 0.090909
+(learning, natural)     Count = 2    P = 0.133333
+(the, bed)      Count = 2    P = 0.008403
+(bed, </s>)     Count = 2    P = 1.000000
+(the, results)  Count = 2    P = 0.008403
+(results, </s>) Count = 2    P = 1.000000
+(<s>, that)     Count = 2    P = 0.007194
+(that, is)      Count = 2    P = 1.000000
+(is, the)       Count = 2    P = 0.022472
+(teacher, has)  Count = 2    P = 0.142857
+(a, language)   Count = 2    P = 0.025316
+(sentences, </s>)       Count = 2    P = 1.000000
+(model, selected)       Count = 2    P = 0.153846
+(selected, the) Count = 2    P = 1.000000
+(the, best)     Count = 2    P = 0.008403
+(best, candidate)       Count = 2    P = 1.000000
+(probability, </s>)     Count = 2    P = 1.000000
+(model, </s>)   Count = 2    P = 0.153846
+(is, large)     Count = 2    P = 0.022472
+(large, </s>)   Count = 2    P = 0.200000
+(model, uses)   Count = 2    P = 0.153846
+(at, a) Count = 2    P = 0.500000
+(a, time)       Count = 2    P = 0.025316
+(time, </s>)    Count = 2    P = 1.000000
+(the, park)     Count = 2    P = 0.008403
+(park, </s>)    Count = 2    P = 1.000000
+(example, </s>) Count = 2    P = 1.000000
+(a, mansion)    Count = 2    P = 0.025316
+(a, garden)     Count = 2    P = 0.025316
+(word, has)     Count = 2    P = 0.181818
+(checks, the)   Count = 2    P = 1.000000
+(the, spelling) Count = 2    P = 0.008403
+(spelling, </s>)        Count = 2    P = 0.222222
+(student, </s>) Count = 2    P = 0.076923
+(models, </s>)  Count = 2    P = 1.000000
+(small, apartment)      Count = 2    P = 0.333333
+(program, is)   Count = 2    P = 0.166667
+(is, simple)    Count = 2    P = 0.022472
+(simple, </s>)  Count = 2    P = 1.000000
+(the, family)   Count = 2    P = 0.008403
+(like, learning)        Count = 2    P = 0.285714
+(the, children) Count = 2    P = 0.008403
+(children, are) Count = 2    P = 1.000000
+(<s>, choose)   Count = 2    P = 0.007194
+(choose, the)   Count = 2    P = 1.000000
+(correct, word) Count = 2    P = 0.181818
+(cat, </s>)     Count = 2    P = 0.400000
+(predicts, the) Count = 2    P = 0.666667
+(class, </s>)   Count = 2    P = 1.000000
+(the, computer) Count = 2    P = 0.008403
+(at, home)      Count = 2    P = 0.500000
+(the, solution) Count = 2    P = 0.008403
+(playing, football)     Count = 2    P = 0.500000
+(football, </s>)        Count = 2    P = 1.000000
+(assignment, </s>)      Count = 2    P = 1.000000
+(<s>, machine)  Count = 2    P = 0.007194
+(learning, can) Count = 2    P = 0.133333
+(system, </s>)  Count = 2    P = 0.500000
+(he, went)      Count = 2    P = 0.285714
+(running, in)   Count = 2    P = 1.000000
+(the, garden)   Count = 2    P = 0.008403
+(large, house)  Count = 2    P = 0.200000
+(the, village)  Count = 2    P = 0.008403
+(has, many)     Count = 2    P = 0.111111
+(many, windows) Count = 2    P = 0.666667
+(windows, </s>) Count = 2    P = 1.000000
+(am, learning)  Count = 2    P = 0.133333
+(are, studying) Count = 2    P = 0.090909
+(a, spell)      Count = 2    P = 0.025316
+(words, </s>)   Count = 2    P = 0.666667
+(is, there)     Count = 2    P = 0.022472
+(english, improves)     Count = 2    P = 0.200000
+(for, an)       Count = 2    P = 0.500000
+(an, examination)       Count = 2    P = 0.222222
+(the, college)  Count = 2    P = 0.008403
+(college, </s>) Count = 2    P = 1.000000
+(we, live)      Count = 2    P = 0.153846
+(a, sentence)   Count = 2    P = 0.025316
+(the, library)  Count = 2    P = 0.008403
+(library, </s>) Count = 2    P = 1.000000
+(to, learn)     Count = 2    P = 0.133333
+(learn, </s>)   Count = 2    P = 1.000000
+(large, city)   Count = 2    P = 0.200000
+(the, room)     Count = 2    P = 0.008403
+(student, made) Count = 2    P = 0.076923
+(made, a)       Count = 2    P = 1.000000
+(mistake, </s>) Count = 2    P = 1.000000
+(model, predicts)       Count = 2    P = 0.153846
+(she, is)       Count = 2    P = 0.200000
+(you, are)      Count = 1    P = 0.333333
+(are, right)    Count = 1    P = 0.045455
+(he, writes)    Count = 1    P = 0.142857
+(answer, to)    Count = 1    P = 0.052632
+(a, village)    Count = 1    P = 0.012658
+(very, hot)     Count = 1    P = 0.500000
+(hot, </s>)     Count = 1    P = 1.000000
+(is, sunny)     Count = 1    P = 0.011236
+(sunny, today)  Count = 1    P = 1.000000
+(the, desk)     Count = 1    P = 0.004202
+(desk, </s>)    Count = 1    P = 1.000000
+(right, sentence)       Count = 1    P = 0.083333
+(he, has)       Count = 1    P = 0.142857
+(she, ate)      Count = 1    P = 0.100000
+(ate, a)        Count = 1    P = 1.000000
+(of, bread)     Count = 1    P = 0.200000
+(bread, </s>)   Count = 1    P = 1.000000
+(they, have)    Count = 1    P = 0.142857
+(are, writing)  Count = 1    P = 0.045455
+(writing, answers)      Count = 1    P = 0.200000
+(answers, </s>) Count = 1    P = 1.000000
+(am, going)     Count = 1    P = 0.066667
+(going, to)     Count = 1    P = 1.000000
+(to, school)    Count = 1    P = 0.066667
+(student, corrects)     Count = 1    P = 0.038462
+(corrects, the) Count = 1    P = 0.333333
+(is, sitting)   Count = 1    P = 0.011236
+(sitting, near) Count = 1    P = 1.000000
+(the, hospital) Count = 1    P = 0.004202
+(hospital, </s>)        Count = 1    P = 1.000000
+(of, information)       Count = 1    P = 0.200000
+(information, </s>)     Count = 1    P = 1.000000
+(<s>, many)     Count = 1    P = 0.003597
+(many, people)  Count = 1    P = 0.333333
+(in, large)     Count = 1    P = 0.024390
+(large, cities) Count = 1    P = 0.100000
+(cities, </s>)  Count = 1    P = 1.000000
+(researcher, improves)  Count = 1    P = 0.142857
+(improves, the) Count = 1    P = 0.333333
+(algorithm, </s>)       Count = 1    P = 0.500000
+(<s>, natural)  Count = 1    P = 0.003597
+(processing, uses)      Count = 1    P = 0.250000
+(uses, machine) Count = 1    P = 0.333333
+(they're, working)      Count = 1    P = 0.166667
+(the, old)      Count = 1    P = 0.004202
+(old, mansion)  Count = 1    P = 0.333333
+(he, is)        Count = 1    P = 0.142857
+(the, country)  Count = 1    P = 0.004202
+(country, needs)        Count = 1    P = 1.000000
+(a, useful)     Count = 1    P = 0.012658
+(useful, program)       Count = 1    P = 0.250000
+(are, in)       Count = 1    P = 0.045455
+(the, classroom)        Count = 1    P = 0.004202
+(classroom, </s>)       Count = 1    P = 1.000000
+(in, peace)     Count = 1    P = 0.024390
+(like, computer)        Count = 1    P = 0.142857
+(in, machine)   Count = 1    P = 0.024390
+(is, reading)   Count = 1    P = 0.011236
+(the, result)   Count = 1    P = 0.004202
+(result, is)    Count = 1    P = 1.000000
+(good, </s>)    Count = 1    P = 0.333333
+(the, rain)     Count = 1    P = 0.004202
+(rain, is)      Count = 1    P = 1.000000
+(is, falling)   Count = 1    P = 0.011236
+(falling, </s>) Count = 1    P = 1.000000
+(i, found)      Count = 1    P = 0.024390
+(found, a)      Count = 1    P = 0.500000
+(of, wood)      Count = 1    P = 0.200000
+(wood, </s>)    Count = 1    P = 1.000000
+(she, likes)    Count = 1    P = 0.100000
+(likes, reading)        Count = 1    P = 0.500000
+(teacher, writes)       Count = 1    P = 0.071429
+(small, village)        Count = 1    P = 0.166667
+(sentence, contains)    Count = 1    P = 0.125000
+(contains, an)  Count = 1    P = 1.000000
+(an, error)     Count = 1    P = 0.111111
+(is, teaching)  Count = 1    P = 0.011236
+(teaching, computer)    Count = 1    P = 1.000000
+(cat, sleeps)   Count = 1    P = 0.200000
+(sleeps, on)    Count = 1    P = 0.500000
+(researcher, compares)  Count = 1    P = 0.142857
+(compares, the) Count = 1    P = 1.000000
+(am, right)     Count = 1    P = 0.066667
+(<s>, practice) Count = 1    P = 0.003597
+(practice, helps)       Count = 1    P = 0.500000
+(helps, students)       Count = 1    P = 0.500000
+(students, improve)     Count = 1    P = 0.111111
+(improve, </s>) Count = 1    P = 1.000000
+(they're, happy)        Count = 1    P = 0.166667
+(happy, today)  Count = 1    P = 0.500000
+(correct, answer)       Count = 1    P = 0.090909
+(their, teacher)        Count = 1    P = 0.166667
+(is, helpful)   Count = 1    P = 0.011236
+(helpful, </s>) Count = 1    P = 1.000000
+(is, checking)  Count = 1    P = 0.011236
+(checking, the) Count = 1    P = 1.000000
+(good, today)   Count = 1    P = 0.333333
+(model, assigns)        Count = 1    P = 0.076923
+(assigns, probabilities)        Count = 1    P = 1.000000
+(probabilities, to)     Count = 1    P = 0.500000
+(to, sentences) Count = 1    P = 0.066667
+(like, natural) Count = 1    P = 0.142857
+(<s>, give)     Count = 1    P = 0.003597
+(give, me)      Count = 1    P = 1.000000
+(me, a) Count = 1    P = 1.000000
+(of, cake)      Count = 1    P = 0.200000
+(cake, </s>)    Count = 1    P = 1.000000
+(program, calculates)   Count = 1    P = 0.083333
+(calculates, the)       Count = 1    P = 1.000000
+(the, probability)      Count = 1    P = 0.004202
+(they, worked)  Count = 1    P = 0.142857
+(worked, for)   Count = 1    P = 1.000000
+(for, peace)    Count = 1    P = 0.250000
+(i, need)       Count = 1    P = 0.024390
+(need, a)       Count = 1    P = 0.500000
+(of, paper)     Count = 1    P = 0.200000
+(paper, </s>)   Count = 1    P = 1.000000
+(the, beautiful)        Count = 1    P = 0.004202
+(large, garden) Count = 1    P = 0.100000
+(researcher, tests)     Count = 1    P = 0.142857
+(tests, the)    Count = 1    P = 1.000000
+(their, house)  Count = 1    P = 0.166667
+(a, bigram)     Count = 1    P = 0.012658
+(bigram, model) Count = 1    P = 1.000000
+(uses, two)     Count = 1    P = 0.333333
+(two, words)    Count = 1    P = 0.500000
+(words, at)     Count = 1    P = 0.333333
+(they, went)    Count = 1    P = 0.142857
+(their, dog)    Count = 1    P = 0.166667
+(is, friendly)  Count = 1    P = 0.011236
+(friendly, </s>)        Count = 1    P = 1.000000
+(my, friend)    Count = 1    P = 0.333333
+(friend, lives) Count = 1    P = 1.000000
+(a, good)       Count = 1    P = 0.012658
+(good, example) Count = 1    P = 0.333333
+(program, produces)     Count = 1    P = 0.083333
+(produces, the) Count = 1    P = 1.000000
+(the, output)   Count = 1    P = 0.004202
+(output, </s>)  Count = 1    P = 1.000000
+(mansion, near) Count = 1    P = 0.071429
+(have, an)      Count = 1    P = 0.200000
+(program, finds)        Count = 1    P = 0.083333
+(finds, the)    Count = 1    P = 1.000000
+(sentence, is)  Count = 1    P = 0.125000
+(researcher, studies)   Count = 1    P = 0.142857
+(studies, language)     Count = 1    P = 0.500000
+(language, </s>)        Count = 1    P = 0.111111
+(am, living)    Count = 1    P = 0.066667
+(student, checks)       Count = 1    P = 0.038462
+(is, helping)   Count = 1    P = 0.011236
+(helping, the)  Count = 1    P = 1.000000
+(are, comparing)        Count = 1    P = 0.045455
+(comparing, two)        Count = 1    P = 1.000000
+(two, models)   Count = 1    P = 0.500000
+(she, lives)    Count = 1    P = 0.100000
+(apartment, </s>)       Count = 1    P = 0.500000
+(their, car)    Count = 1    P = 0.166667
+(car, is)       Count = 1    P = 1.000000
+(is, new)       Count = 1    P = 0.011236
+(new, </s>)     Count = 1    P = 0.500000
+(is, widely)    Count = 1    P = 0.011236
+(widely, used)  Count = 1    P = 1.000000
+(used, </s>)    Count = 1    P = 1.000000
+(is, accurate)  Count = 1    P = 0.011236
+(accurate, </s>)        Count = 1    P = 1.000000
+(a, comfortable)        Count = 1    P = 0.012658
+(comfortable, home)     Count = 1    P = 1.000000
+(learning, languages)   Count = 1    P = 0.066667
+(languages, </s>)       Count = 1    P = 1.000000
+(are, playing)  Count = 1    P = 0.045455
+(playing, in)   Count = 1    P = 0.250000
+(the, language) Count = 1    P = 0.004202
+(model, evaluates)      Count = 1    P = 0.076923
+(evaluates, sentences)  Count = 1    P = 0.500000
+(right, word)   Count = 1    P = 0.083333
+(system, suggested)     Count = 1    P = 0.250000
+(suggested, the)        Count = 1    P = 1.000000
+(is, chasing)   Count = 1    P = 0.011236
+(chasing, the)  Count = 1    P = 1.000000
+(a, classifier) Count = 1    P = 0.012658
+(classifier, predicts)  Count = 1    P = 1.000000
+(correct, class)        Count = 1    P = 0.090909
+(professor, teaches)    Count = 1    P = 0.333333
+(teaches, the)  Count = 1    P = 1.000000
+(science, class)        Count = 1    P = 0.200000
+(am, at)        Count = 1    P = 0.066667
+(solution, to)  Count = 1    P = 0.500000
+(program, reads)        Count = 1    P = 0.083333
+(the, input)    Count = 1    P = 0.004202
+(input, </s>)   Count = 1    P = 1.000000
+(a, high)       Count = 1    P = 0.012658
+(high, probability)     Count = 1    P = 1.000000
+(he, likes)     Count = 1    P = 0.142857
+(likes, playing)        Count = 1    P = 0.500000
+(on, an)        Count = 1    P = 0.058824
+(an, assignment)        Count = 1    P = 0.111111
+(are, there)    Count = 1    P = 0.045455
+(a, difficult)  Count = 1    P = 0.012658
+(difficult, problem)    Count = 1    P = 0.500000
+(problem, </s>) Count = 1    P = 0.333333
+(very, cold)    Count = 1    P = 0.500000
+(cold, </s>)    Count = 1    P = 1.000000
+(can, detect)   Count = 1    P = 0.500000
+(detect, errors)        Count = 1    P = 1.000000
+(researcher, evaluates) Count = 1    P = 0.142857
+(evaluates, the)        Count = 1    P = 0.500000
+(the, office)   Count = 1    P = 0.004202
+(office, </s>)  Count = 1    P = 1.000000
+(researcher, builds)    Count = 1    P = 0.142857
+(builds, a)     Count = 1    P = 1.000000
+(a, model)      Count = 1    P = 0.012658
+(checker, found)        Count = 1    P = 0.200000
+(found, the)    Count = 1    P = 0.500000
+(are, calculating)      Count = 1    P = 0.045455
+(calculating, word)     Count = 1    P = 1.000000
+(word, probabilities)   Count = 1    P = 0.090909
+(probabilities, </s>)   Count = 1    P = 0.500000
+(are, running)  Count = 1    P = 0.045455
+(are, working)  Count = 1    P = 0.045455
+(working, together)     Count = 1    P = 0.200000
+(together, </s>)        Count = 1    P = 1.000000
+(he, lives)     Count = 1    P = 0.142857
+(<s>, there)    Count = 1    P = 0.003597
+(there, is)     Count = 1    P = 0.166667
+(is, peace)     Count = 1    P = 0.011236
+(peace, in)     Count = 1    P = 0.125000
+(a, report)     Count = 1    P = 0.012658
+(report, </s>)  Count = 1    P = 1.000000
+(teacher, explains)     Count = 1    P = 0.071429
+(explains, the) Count = 1    P = 1.000000
+(<s>, people)   Count = 1    P = 0.003597
+(in, different) Count = 1    P = 0.024390
+(different, houses)     Count = 1    P = 1.000000
+(houses, </s>)  Count = 1    P = 1.000000
+(house, near)   Count = 1    P = 0.055556
+(girl, is)      Count = 1    P = 0.333333
+(is, playing)   Count = 1    P = 0.011236
+(playing, with) Count = 1    P = 0.250000
+(with, the)     Count = 1    P = 1.000000
+(a, big)        Count = 1    P = 0.012658
+(big, mansion)  Count = 1    P = 1.000000
+(a, unigram)    Count = 1    P = 0.012658
+(unigram, model)        Count = 1    P = 1.000000
+(uses, one)     Count = 1    P = 0.333333
+(one, word)     Count = 1    P = 1.000000
+(word, at)      Count = 1    P = 0.090909
+(are, correcting)       Count = 1    P = 0.045455
+(correcting, spelling)  Count = 1    P = 1.000000
+(checker, suggests)     Count = 1    P = 0.200000
+(suggests, a)   Count = 1    P = 1.000000
+(a, correction) Count = 1    P = 0.012658
+(correction, </s>)      Count = 1    P = 1.000000
+(is, misspelled)        Count = 1    P = 0.011236
+(misspelled, </s>)      Count = 1    P = 0.500000
+(checker, corrected)    Count = 1    P = 0.200000
+(corrected, the)        Count = 1    P = 1.000000
+(they're, playing)      Count = 1    P = 0.166667
+(studying, machine)     Count = 1    P = 0.250000
+(their, books)  Count = 1    P = 0.166667
+(books, are)    Count = 1    P = 0.200000
+(are, on)       Count = 1    P = 0.045455
+(is, eating)    Count = 1    P = 0.011236
+(eating, food)  Count = 1    P = 1.000000
+(food, </s>)    Count = 1    P = 1.000000
+(checker, corrects)     Count = 1    P = 0.200000
+(corrects, misspelled)  Count = 1    P = 0.333333
+(misspelled, words)     Count = 1    P = 0.500000
+(<s>, writing)  Count = 1    P = 0.003597
+(writing, english)      Count = 1    P = 0.200000
+(improves, grammar)     Count = 1    P = 0.333333
+(grammar, </s>) Count = 1    P = 1.000000
+(are, preparing)        Count = 1    P = 0.045455
+(for, the)      Count = 1    P = 0.250000
+(the, examination)      Count = 1    P = 0.004202
+(is, explaining)        Count = 1    P = 0.011236
+(explaining, the)       Count = 1    P = 1.000000
+(the, lesson)   Count = 1    P = 0.004202
+(lesson, </s>)  Count = 1    P = 1.000000
+(are, evaluating)       Count = 1    P = 0.045455
+(evaluating, the)       Count = 1    P = 1.000000
+(the, performance)      Count = 1    P = 0.004202
+(performance, </s>)     Count = 1    P = 1.000000
+(is, an)        Count = 1    P = 0.011236
+(an, important) Count = 1    P = 0.111111
+(important, assignment) Count = 1    P = 0.500000
+(<s>, speaking) Count = 1    P = 0.003597
+(speaking, english)     Count = 1    P = 1.000000
+(improves, communication)       Count = 1    P = 0.333333
+(communication, </s>)   Count = 1    P = 1.000000
+(am, preparing) Count = 1    P = 0.066667
+(<s>, learning) Count = 1    P = 0.003597
+(english, takes)        Count = 1    P = 0.100000
+(takes, practice)       Count = 1    P = 1.000000
+(practice, </s>)        Count = 1    P = 0.500000
+(girl, lives)   Count = 1    P = 0.333333
+(small, corpus) Count = 1    P = 0.166667
+(corpus, </s>)  Count = 1    P = 1.000000
+(am, happy)     Count = 1    P = 0.066667
+(happy, </s>)   Count = 1    P = 0.500000
+(writes, an)    Count = 1    P = 0.125000
+(solution, is)  Count = 1    P = 0.500000
+(the, sky)      Count = 1    P = 0.004202
+(sky, is)       Count = 1    P = 1.000000
+(is, blue)      Count = 1    P = 0.011236
+(blue, </s>)    Count = 1    P = 1.000000
+(apartment, near)       Count = 1    P = 0.500000
+(a, modern)     Count = 1    P = 0.012658
+(modern, house) Count = 1    P = 1.000000
+(teacher, helps)        Count = 1    P = 0.071429
+(helps, the)    Count = 1    P = 0.500000
+(computer, is)  Count = 1    P = 0.125000
+(is, important) Count = 1    P = 0.011236
+(important, </s>)       Count = 1    P = 0.500000
+(they're, learning)     Count = 1    P = 0.166667
+(learning, computer)    Count = 1    P = 0.066667
+(can, classify) Count = 1    P = 0.500000
+(classify, text)        Count = 1    P = 1.000000
+(text, </s>)    Count = 1    P = 1.000000
+(system, detected)      Count = 1    P = 0.250000
+(detected, the) Count = 1    P = 1.000000
+(is, preparing) Count = 1    P = 0.011236
+(like, machine) Count = 1    P = 0.142857
+(girl, writes)  Count = 1    P = 0.333333
+(sentence, in)  Count = 1    P = 0.125000
+(in, her)       Count = 1    P = 0.024390
+(her, notebook) Count = 1    P = 1.000000
+(notebook, </s>)        Count = 1    P = 1.000000
+(is, sleeping)  Count = 1    P = 0.011236
+(sleeping, on)  Count = 1    P = 1.000000
+(people, want)  Count = 1    P = 0.250000
+(want, peace)   Count = 1    P = 1.000000
+(is, raining)   Count = 1    P = 0.011236
+(raining, outside)      Count = 1    P = 1.000000
+(outside, </s>) Count = 1    P = 1.000000
+(a, quiet)      Count = 1    P = 0.012658
+(quiet, neighborhood)   Count = 1    P = 1.000000
+(neighborhood, </s>)    Count = 1    P = 1.000000
+(am, writing)   Count = 1    P = 0.066667
+(writing, on)   Count = 1    P = 0.200000
+(the, board)    Count = 1    P = 0.004202
+(board, </s>)   Count = 1    P = 1.000000
+(the, wrong)    Count = 1    P = 0.004202
+(wrong, answer) Count = 1    P = 0.500000
+(they're, studying)     Count = 1    P = 0.166667
+(studying, english)     Count = 1    P = 0.250000
+(researcher, analyzes)  Count = 1    P = 0.142857
+(analyzes, the) Count = 1    P = 1.000000
+(the, data)     Count = 1    P = 0.004202
+(data, </s>)    Count = 1    P = 1.000000
+(small, house)  Count = 1    P = 0.166667
+(the, quick)    Count = 1    P = 0.004202
+(quick, brown)  Count = 1    P = 1.000000
+(brown, fox)    Count = 1    P = 1.000000
+(fox, jumps)    Count = 1    P = 1.000000
+(jumps, over)   Count = 1    P = 1.000000
+(over, the)     Count = 1    P = 0.500000
+(the, lazy)     Count = 1    P = 0.004202
+(lazy, dog)     Count = 1    P = 1.000000
+(dog, </s>)     Count = 1    P = 0.142857
+(teacher, checks)       Count = 1    P = 0.071429
+(is, pleasant)  Count = 1    P = 0.011236
+(pleasant, today)       Count = 1    P = 1.000000
+(student, studies)      Count = 1    P = 0.038462
+(studies, in)   Count = 1    P = 0.500000
+(is, easy)      Count = 1    P = 0.011236
+(easy, to)      Count = 1    P = 1.000000
+(the, world)    Count = 1    P = 0.004202
+(world, needs)  Count = 1    P = 1.000000
+(they're, reading)      Count = 1    P = 0.166667
+(school, is)    Count = 1    P = 0.166667
+(am, studying)  Count = 1    P = 0.066667
+(studying, language)    Count = 1    P = 0.250000
+(language, models)      Count = 1    P = 0.111111
+(their, answer) Count = 1    P = 0.166667
+(a, noisy)      Count = 1    P = 0.012658
+(noisy, channel)        Count = 1    P = 1.000000
+(channel, model)        Count = 1    P = 1.000000
+(model, considers)      Count = 1    P = 0.076923
+(considers, the)        Count = 1    P = 1.000000
+(the, intended) Count = 1    P = 0.004202
+(intended, word)        Count = 1    P = 1.000000
+(the, cup)      Count = 1    P = 0.004202
+(cup, is)       Count = 1    P = 1.000000
+(checker, detects)      Count = 1    P = 0.200000
+(detects, spelling)     Count = 1    P = 1.000000
+(like, programming)     Count = 1    P = 0.142857
+(programming, </s>)     Count = 1    P = 1.000000
+(a, typing)     Count = 1    P = 0.012658
+(typing, mistake)       Count = 1    P = 1.000000
+(student, learns)       Count = 1    P = 0.038462
+(learns, from)  Count = 1    P = 1.000000
+(from, mistakes)        Count = 1    P = 1.000000
+(mistakes, </s>)        Count = 1    P = 1.000000
+(algorithm, is) Count = 1    P = 0.500000
+(bag, is)       Count = 1    P = 0.250000
+(the, chair)    Count = 1    P = 0.004202
+(chair, </s>)   Count = 1    P = 1.000000
+(<s>, please)   Count = 1    P = 0.003597
+(please, write) Count = 1    P = 1.000000
+(answer, correctly)     Count = 1    P = 0.052632
+(correctly, </s>)       Count = 1    P = 1.000000
+(is, working)   Count = 1    P = 0.011236
+(sentence, has) Count = 1    P = 0.125000
+(predicts, words)       Count = 1    P = 0.333333
+(are, analyzing)        Count = 1    P = 0.045455
+(analyzing, the)        Count = 1    P = 1.000000
+(is, wrong)     Count = 1    P = 0.011236
+(wrong, </s>)   Count = 1    P = 0.500000
+(is, running)   Count = 1    P = 0.011236
+(like, reading) Count = 1    P = 0.142857
+(we, like)      Count = 1    P = 0.076923
+(learning, new) Count = 1    P = 0.066667
+(new, things)   Count = 1    P = 0.500000
+(things, </s>)  Count = 1    P = 1.000000
+(the, next)     Count = 1    P = 0.004202
+(next, word)    Count = 1    P = 1.000000
+(is, over)      Count = 1    P = 0.011236
+(over, there)   Count = 1    P = 0.500000
+(is, small)     Count = 1    P = 0.011236
+(small, </s>)   Count = 1    P = 0.166667
+(they, are)     Count = 1    P = 0.142857
+(a, city)       Count = 1    P = 0.012658
+(she, writes)   Count = 1    P = 0.100000
+(a, letter)     Count = 1    P = 0.012658
+(letter, </s>)  Count = 1    P = 1.000000
+(<s>, go)       Count = 1    P = 0.003597
+(go, there)     Count = 1    P = 1.000000
+(there, now)    Count = 1    P = 0.166667
+(now, </s>)     Count = 1    P = 1.000000
+(is, difficult) Count = 1    P = 0.011236
+(difficult, to) Count = 1    P = 0.500000
+(family, eats)  Count = 1    P = 0.250000
+(eats, dinner)  Count = 1    P = 1.000000
+(dinner, at)    Count = 1    P = 1.000000
+(are, reading)  Count = 1    P = 0.045455
+(spelling, mistake)     Count = 1    P = 0.111111
+(program, corrects)     Count = 1    P = 0.083333
+(corrects, spelling)    Count = 1    P = 0.333333
+(in, artificial)        Count = 1    P = 0.024390
+(artificial, intelligence)      Count = 1    P = 1.000000
+(intelligence, </s>)    Count = 1    P = 1.000000
+(studying, computer)    Count = 1    P = 0.250000
+(we, need)      Count = 1    P = 0.076923
+(need, peace)   Count = 1    P = 0.500000
+(teacher, gives)        Count = 1    P = 0.071429
+(gives, an)     Count = 1    P = 1.000000
+(an, example)   Count = 1    P = 0.111111
+(the, candidate)        Count = 1    P = 0.004202
+(candidate, word)       Count = 1    P = 0.250000
+(is, likely)    Count = 1    P = 0.011236
+(likely, </s>)  Count = 1    P = 1.000000
+(am, reading)   Count = 1    P = 0.066667
+(the, agreement)        Count = 1    P = 0.004202
+(agreement, brought)    Count = 1    P = 1.000000
+(brought, peace)        Count = 1    P = 1.000000
+(the, question) Count = 1    P = 0.004202
+(question, </s>)        Count = 1    P = 1.000000
+(write, an)     Count = 1    P = 0.142857
+(dog, sleeps)   Count = 1    P = 0.142857
+(sleeps, near)  Count = 1    P = 0.500000
+(the, door)     Count = 1    P = 0.004202
+(door, </s>)    Count = 1    P = 1.000000
+(are, testing)  Count = 1    P = 0.045455
+(testing, the)  Count = 1    P = 1.000000
+(correct, candidate)    Count = 1    P = 0.090909
+(is, learning)  Count = 1    P = 0.011236
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 3
+
+Enter text: the cat plays with a ball
+
+Unigram probability: 0.0
+Bigram probability: 0.0
+
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 4
+
+Sentence length: 4
+
+Generated Unigram Sentence:
+are went i the
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 4
+
+Sentence length: 5
+
+Generated Unigram Sentence:
+have sentence the in a
+
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 5
+
+Generated Bigram Sentence:
+the right sentence contains an example
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 5
+
+Generated Bigram Sentence:
+the program produces the problem
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 6
+
+Calculating perplexity...
+
+Unigram Perplexity: inf
+Bigram Perplexity: inf
+
+Comparison:
+Both models have equal perplexity.
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: exit
+
+Invalid choice.
+
+============================================================
+MENU
+============================================================
+1. Display unigram probabilities
+2. Display bigram probabilities
+3. Calculate probability of text
+4. Generate unigram sentence
+5. Generate bigram sentence
+6. Calculate perplexity
+7. Exit
+
+Enter your choice: 7
+
+Exiting...
+
