@@ -15,3 +15,51 @@ Epoch 03/30 Loss: 0.8450
 Epoch 04/30 Loss: 0.6227
 Epoch 05/30 Loss: 0.4906
 Epoch 06/30 Loss: 0.3645
+Epoch 07/30 Loss: 0.2954
+Epoch 08/30 Loss: 0.2455
+Epoch 09/30 Loss: 0.2142
+Epoch 10/30 Loss: 0.1834
+Epoch 11/30 Loss: 0.1464
+Epoch 12/30 Loss: 0.1290
+Epoch 13/30 Loss: 0.1214
+Epoch 14/30 Loss: 0.1247
+Epoch 15/30 Loss: 0.1161
+Epoch 16/30 Loss: 0.0887
+Epoch 17/30 Loss: 0.0841
+Epoch 18/30 Loss: 0.1243
+Epoch 19/30 Loss: 0.0983
+Epoch 20/30 Loss: 0.0728
+Epoch 21/30 Loss: 0.0775
+Epoch 22/30 Loss: 0.0926
+Epoch 23/30 Loss: 0.0922
+Epoch 24/30 Loss: 0.0688
+Epoch 25/30 Loss: 0.0717
+Epoch 26/30 Loss: 0.0950
+Epoch 27/30 Loss: 0.0718
+Epoch 28/30 Loss: 0.0748
+Epoch 29/30 Loss: 0.1162
+Epoch 30/30 Loss: 0.0894
+
+============================================================
+NEURAL SPELL CHECK
+============================================================
+
+Enter a misspelled word (or 'quit'):
+ketten
+Neural correction: tenten
+
+Enter a misspelled word (or 'quit'):
+sudent
+Neural correction: student
+
+Enter a misspelled word (or 'quit'):
+manhoes
+Neural correction: hmeas
+
+Enter a misspelled word (or 'quit'):
+manho
+Neural correction: hann
+
+Enter a misspelled word (or 'quit'):
+misepll
+Neural correction: smidlls
