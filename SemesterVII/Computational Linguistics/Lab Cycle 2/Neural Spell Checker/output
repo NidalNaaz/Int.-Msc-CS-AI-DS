@@ -1,0 +1,17 @@
+============================================================
+NEURAL SPELLING ERROR CORRECTOR
+CHARACTER-LEVEL LSTM - PYTORCH
+============================================================
+
+Vocabulary: 320 words
+Character vocabulary: 29
+Training examples: 1600
+
+Training neural model...
+
+Epoch 01/30 Loss: 2.0344
+Epoch 02/30 Loss: 1.2071
+Epoch 03/30 Loss: 0.8450
+Epoch 04/30 Loss: 0.6227
+Epoch 05/30 Loss: 0.4906
+Epoch 06/30 Loss: 0.3645
