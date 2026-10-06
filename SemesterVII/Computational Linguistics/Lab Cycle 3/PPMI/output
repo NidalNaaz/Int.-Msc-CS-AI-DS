@@ -1,0 +1,29 @@
+#output
+=================================================================
+ PPMI MATRIX & COSINE SIMILARITY
+=================================================================
+
+Vocabulary (15 words):
+['and', 'are', 'at', 'barked', 'brown', 'dog', 'dogs', 'fast', 'fox', 'jumps', 'lazy', 'over', 'quick', 'smart', 'the']
+
+PPMI Matrix Excerpt (Shape: 15x15):
+[[0.     0.     0.     0.     0.    ]
+ [0.     0.     0.     0.     0.    ]
+ [0.     0.     0.     1.9892 0.    ]
+ [0.     0.     1.9892 0.     0.    ]
+ [0.     0.     0.     0.     0.    ]]
+
+-----------------------------------------------------------------
+ WORD SIMILARITY
+-----------------------------------------------------------------
+Word 1: 'fox'
+Word 2: 'dog'
+Cosine Similarity ('fox' vs 'dog'): 0.1467
+
+-----------------------------------------------------------------
+ DOCUMENT SIMILARITY
+-----------------------------------------------------------------
+Doc 1: 'the quick brown fox jumps over the lazy dog'
+Doc 2: 'the dog barked at the lazy fox'
+Cosine Similarity (Doc 1 vs Doc 2): 0.8181
+=================================================================
