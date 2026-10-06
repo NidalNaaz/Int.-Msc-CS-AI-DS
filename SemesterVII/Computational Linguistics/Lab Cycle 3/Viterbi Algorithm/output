@@ -1,0 +1,8 @@
+#output
+=============================================
+ VITERBI POS TAGGER OUTPUT
+=============================================
+Input Sentence      : time flies fast
+Most Probable Tags  : NN -> VB -> RB
+Sequence Probability: 0.00003125
+=============================================
