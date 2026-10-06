@@ -1,0 +1,15 @@
+#output
+=================================================================
+ NAIVE BAYES WSD CLASSIFIER (ADD-1 SMOOTHING)
+=================================================================
+Target Word   : 'bass'
+Test Sentence : 'He loves jazz. The bass_line provided the foundation for the guitar solo in the jazz piece'
+
+-----------------------------------------------------------------
+ LOG POSTERIOR PROBABILITIES
+-----------------------------------------------------------------
+Sense: fish       | Log-Likelihood: -57.4377
+Sense: guitar     | Log-Likelihood: -54.0655
+-----------------------------------------------------------------
+Predicted Sense Output : guitar
+=================================================================
