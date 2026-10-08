@@ -1,0 +1,13 @@
+#output
+PS C:\Users\ithni\Desktop\nidal\College\Cochin Universiy Of Science and Technology\Semester VII\Deep Learning\Assignment 2> python LSTM_Match.py
+Starting training...
+Epoch [1/200] - Loss: 2.4801
+Epoch [40/200] - Loss: 0.2024
+Epoch [80/200] - Loss: 0.1988
+Epoch [120/200] - Loss: 0.1928
+Epoch [160/200] - Loss: 0.1911
+Epoch [200/200] - Loss: 0.1936
+
+[Test Inference] Seed: 'mach' -> Generated: 'machine learning'
+
+Model saved to 'lstm_model.pth'.
